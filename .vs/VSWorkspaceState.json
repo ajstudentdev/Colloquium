@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\app",
+    "\\app\\Console",
+    "\\app\\Exceptions",
+    "\\app\\Models"
   ],
-  "SelectedNode": "\\C:\\xampp\\htdocs\\ColloquiumV2",
   "PreviewInSolutionExplorer": false
 }
