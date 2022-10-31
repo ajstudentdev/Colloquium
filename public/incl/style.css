@@ -19,7 +19,6 @@ body {
     color: #FFF;
     text-shadow: 2px 2px 8px #000;
     background-color: #000;
-    overflow: hidden;
 }
 
 body::after {
@@ -53,18 +52,55 @@ h1 {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
     gap: 0px 0px;
     width: 93vw;
-    height: 93vh;
     grid-auto-flow: row;
-    grid-template-areas:
+}
+
+
+@media screen and (min-width : 1440px) {
+    .container {
+        height: 93vh;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
+        grid-template-areas:
         "Title Title Title"
         "Description Description Avatar"
         "Metadata Metadata Logo-company"
         "Upcoming Upcoming Upcoming";
+    }
+    .qrcode, .upcoming-container-right {
+        display:block;
+    }
+
+    .upcoming-container-left {
+        width:85%;
+    }
 }
+
+@media screen and (max-width : 1439px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1.5fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "Title Title"
+        "Description Description"
+        "Logo-company Avatar"
+        "Metadata Metadata"
+        "Upcoming Upcoming";
+    }
+    .qrcode, .upcoming-container-right {
+        display:none;
+    }
+
+    .upcoming-container-left {
+        width:100%;
+    }
+}
+
+
+
+
 
 .Title {
     grid-area: Title;
@@ -183,6 +219,10 @@ html, body, {
     box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
 }
 
+.qrcode {
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+}
+
 .omschrijving-lezing {
     background: rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
@@ -217,7 +257,6 @@ html, body, {
 
 
 .upcoming-container-left {
-    width: 85%;
     height: 100%;
     clear: none;
     display: inline-block;
@@ -455,3 +494,17 @@ animation-duration: 0.4s
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#000; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#000;}
 #simplemodal-container a.modalCloseImg {background:url(../img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute;top: -9px;right: -8px;cursor:pointer;}
+
+
+
+
+
+# ------- mobiele weergave ------ #
+
+
+@media screen and (max-width : 1440px) {
+    body {
+        background: red;
+        border-top: 2px solid #DDDDDD;
+    }
+}
