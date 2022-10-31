@@ -1,0 +1,457 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #FFF;
+    text-shadow: 2px 2px 8px #000;
+    background-color: #000;
+    overflow: hidden;
+}
+
+body::after {
+    content: "";
+    background: url(../img/mountain.jpg) center center;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+a {
+    color: #EE7B00;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EE7B00;
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+
+/* -------- Start pagina -------- */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
+    gap: 0px 0px;
+    width: 93vw;
+    height: 93vh;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Title Title Title"
+        "Description Description Avatar"
+        "Metadata Metadata Logo-company"
+        "Upcoming Upcoming Upcoming";
+}
+
+.Title {
+    grid-area: Title;
+}
+
+.Description {
+    grid-area: Description;
+}
+
+.Avatar {
+    grid-area: Avatar;
+}
+
+.Metadata {
+    grid-area: Metadata;
+}
+
+.Logo-company {
+    grid-area: Logo-company;
+}
+
+.Upcoming {
+    grid-area: Upcoming;
+}
+
+
+html, body, {
+    height: 100%;
+    margin: 0;
+}
+
+/* For presentation only, no need to copy the code below */
+
+.container * {
+    position: relative;
+}
+
+.container *:after {
+    /* content:attr(class); */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-company-img {
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.metadata-table {
+    margin-top: 4%;
+    font-size: 24px;
+}
+
+.metadata-table-type {
+    font-weight: bold;
+}
+
+
+.upcoming-table {
+    border-collapse: collapse;
+    font-size: 20px;
+    width: 98%;
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+    background: rgba(255, 255, 255, 0.7);
+    text-shadow: none;
+    color: #000;
+}
+
+.upcoming-table thead tr {
+    background-color: #EE7B00;
+    color: #ffffff;
+    text-align: left;
+}
+
+.upcoming-table th,
+.upcoming-table td {
+    padding: 12px 15px;
+}
+
+.upcoming-table tbody tr {
+    border-bottom: 1px solid #8f8787;
+}
+
+.upcoming-table tbody tr:nth-of-type(even) {
+   background: rgb(225 148 104 / 18%);
+}
+
+.upcoming-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.upcoming-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.avatar-img {
+    width: 50%;
+    height: 75%;
+    background: url("../content/steve-jobs.jpg");
+    background-size: cover;
+    margin: auto;
+    margin-top: 5%;
+    border: 10px solid #ee7b00;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+}
+
+.omschrijving-lezing {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+    font-size: 25px;
+    width: 100%;
+    height: 90%;
+}
+
+
+.container {
+    margin: 4%;
+    margin-top: -10px;
+}
+
+.naam-company {
+    font-size: 30px;
+    height: 60%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.logo-company-container {
+    height: 40%;
+}
+
+.spreker-naam {
+    text-align: center;
+    width: 100%;
+    margin-top: -10%;
+    font-size: 30px;
+}
+
+
+.upcoming-container-left {
+    width: 85%;
+    height: 100%;
+    clear: none;
+    display: inline-block;
+}
+
+.upcoming-container-right {
+    width: 14%;
+    height: 100%;
+    clear: none;
+    float: right;
+}
+
+tr.clickable-row:hover {
+  background-color: lightyellow!important;
+  font-weight:bolder;
+  cursor: pointer;
+}
+
+#simplemodal-container {
+-webkit-animation-name: fadeIn;
+-webkit-animation-duration: 0.4s;
+animation-name: fadeIn;
+animation-duration: 0.4s
+}
+
+.metadata-table {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: auto;
+    font-size: 25px;
+}
+
+
+.metadata-table {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+    padding: 20px;
+    font-size: 20px;
+    width: 100%;
+    height: 20%;
+}
+
+.divide {
+    border-left: 1px solid grey;
+}
+
+.metadata-table .column-name {
+    text-align: right;
+    padding-right: 1%;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+
+
+/* --------------- menu --------------- */
+
+
+.sliding-navbar {
+    position: absolute;
+    top: 0;
+    left: -410px;
+    height: 100vh;
+    width: 400px;
+    background: #333;
+    transition: left 0.8s ease-in-out;
+    z-index: 9999;
+    border-right: 10px solid #ee7b00;
+}
+
+.sliding-navbar a {
+  color:#FFF;
+}
+.sliding-navbar--open {
+    left: 0px;
+}
+.mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background: #333;
+    opacity: 0.8;
+    display:none;
+    z-index:999;
+}
+
+.brand {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 140px;
+    margin: 20px auto 0 auto;
+    transition: color 0.2s ease-in-out;
+}
+.brand:hover {
+    color: #ccc;
+}
+.navbar--items {
+    list-style-type: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.navbar--item {
+    margin: 20px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+}
+.hamburger-menu {
+    z-index: 99999;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    margin: auto;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+.hamburger {
+    position: relative;
+    transform: translateY(10px);
+    background: white;
+    transition: all 0ms 300ms;
+}
+.hamburger,
+.hamburger:after,
+.hamburger:before {
+    width: 40px;
+    height: 3px;
+}
+.hamburger:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    background: white;
+    transition: bottom 0.3s ease-in-out;
+}
+.hamburger:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background: white;
+    transition: top 0.3s ease-in-out;
+}
+.menu-opened:before {
+    bottom: 3px;
+    transition: bottom 0.3s ease-in-out;
+}
+.menu-opened:after {
+    top: 3px;
+    transition: top 0.3s ease-in-out;
+}
+
+
+/* ---------------  login pagina --------------- */
+
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.loginform {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.loginform input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.loginform button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #EE7B00;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.loginform button:hover, .loginform button:active, .loginform button:focus {
+    background: #43A047;
+}
+.loginform .message {
+    margin: 15px 0 0;
+    color: #838383;
+    text-shadow: 1px 1px 3px #b7b7b7;
+    font-size: 12px;
+}
+.loginform .message a {
+    color: #EE7B00;
+    text-decoration: none;
+}
+.loginform .register-form {
+    display: none;
+}
+
+
+# -------- modal --------#
+
+#basic-modal-content {display:none;}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+
+/* Container */
+#simplemodal-container {height:360px; width:600px; color:#000; background-color:#DBDBDC; border:4px solid #444; padding:12px;text-shadow: 2px 2px 8px #7a7a7a;border-radius:20px;}
+#simplemodal-container .simplemodal-data {padding:8px;}
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#000; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#000;}
+#simplemodal-container a.modalCloseImg {background:url(../img/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute;top: -9px;right: -8px;cursor:pointer;}

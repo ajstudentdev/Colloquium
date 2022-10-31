@@ -15,7 +15,9 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/user', [UserController::class, 'show']);
+Route::get('/login', function () {
+    return view('login');
+});
