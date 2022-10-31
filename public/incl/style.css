@@ -26,19 +26,14 @@ body {
 	color: #FFF;
 	text-shadow: 2px 2px 8px #000;
 	background-color: #000;
+    background: url(../img/mountain.jpg) center center;
+    background-attachment:fixed;
 }
 
-body::after {
-	content: "";
-	background: url(../img/mountain.jpg) center center;
-	opacity: 0.7;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1;
+#basic-modal-content1, #basic-modal-content2, #basic-modal-content3, #basic-modal-content4, #basic-modal-content5 {
+    display:none;
 }
+
 
 a {
 	color: #EE7B00;
@@ -87,7 +82,7 @@ h1 {
 @media screen and (max-width : 1439px) {
 	.container {
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 0.5fr 1.5fr 1fr 1fr 1fr;
+		grid-template-rows: 0.5fr 1fr 0.8fr 0.5fr 1fr;
 		grid-template-areas: "Title Title"
         "Description Description"
         "Logo-company Avatar"
@@ -271,13 +266,6 @@ tr.clickable-row:hover {
 	background-color: lightyellow!important;
 	font-weight: bolder;
 	cursor: pointer;
-}
-
-#simplemodal-container {
-	-webkit-animation-name: fadeIn;
-	-webkit-animation-duration: 0.4s;
-	animation-name: fadeIn;
-	animation-duration: 0.4s;
 }
 
 .metadata-table {
@@ -498,6 +486,49 @@ tr.clickable-row:hover {
 
 # -------- modal --------#
 
+
+#simplemodal-container {
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration: 0.4s;
+	animation-name: fadeIn;
+	animation-duration: 0.4s;
+}
+
+@-webkit-keyframes slideIn {
+	  from {bottom: -300px; opacity: 0}
+	  to {bottom: 0; opacity: 1}
+	}
+
+	@keyframes slideIn {
+	  from {bottom: -300px; opacity: 0}
+	  to {bottom: 0; opacity: 1}
+	}
+
+	@-webkit-keyframes fadeIn {
+	  from {opacity: 0}
+	  to {opacity: 1}
+	}
+
+	@keyframes fadeIn {
+	  from {opacity: 0}
+	  to {opacity: 1}
+	}
+
+
+#simplemodal-container {
+	-webkit-animation-name: slideIn;
+	-webkit-animation-duration: 0.4s;
+	animation-name: slideIn;
+	animation-duration: 0.4s
+	}
+
+.simplemodal-container {
+	position: fixed;
+	    bottom: 0;
+
+}
+
+
 #basic-modal-content {
 	display: none;
 }
@@ -548,3 +579,4 @@ tr.clickable-row:hover {
 	right: -8px;
 	cursor: pointer;
 }
+

@@ -26,39 +26,7 @@
 
 <style>
 
-	@-webkit-keyframes slideIn {
-	  from {bottom: -300px; opacity: 0}
-	  to {bottom: 0; opacity: 1}
-	}
-
-	@keyframes slideIn {
-	  from {bottom: -300px; opacity: 0}
-	  to {bottom: 0; opacity: 1}
-	}
-
-	@-webkit-keyframes fadeIn {
-	  from {opacity: 0}
-	  to {opacity: 1}
-	}
-
-	@keyframes fadeIn {
-	  from {opacity: 0}
-	  to {opacity: 1}
-	}
-
-
-#simplemodal-container {
-	-webkit-animation-name: slideIn;
-	-webkit-animation-duration: 0.4s;
-	animation-name: slideIn;
-	animation-duration: 0.4s
-	}
-
-.simplemodal-container {
-	position: fixed;
-	    bottom: 0;
-
-}
+	
 
 </style>
 
@@ -177,7 +145,7 @@
 					</table>
 				</div>
 				<div class="upcoming-container-right">
-					<img style = "box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);" src="./content/qrcode_example.gif">
+					<img class="qrcode" src="./content/qrcode_example.gif">
 					</div>
 				</div>
 			</div>
