@@ -120,59 +120,59 @@
 					<table class="upcoming-table">
 						<thead>
 							<tr>
-								<th>Type</th>
+								<th class="hidemobile">Type</th>
 								<th>Naam spreker</th>
 								<th>Titel</th>
-								<th>Datum</th>
+								<th class="hidemobile">Datum</th>
 								<th>Starttijd</th>
-								<th>Duur</th>
+								<th class="hidemobile">Duur</th>
 								<th>Locatie</th>
 							</tr>
 						</thead>
 						<tbody id="basic-modal">
 							<tr class="clickable-row basic1" data-href='#'>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 							</tr>
 							<tr class="clickable-row basic2" data-href='#'>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 							</tr>
 							<tr class="clickable-row basic3" data-href='#'>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 							</tr>
 							<tr class="clickable-row basic4" data-href='#'>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 							</tr>
 							<tr class="clickable-row basic5" data-href='#'>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
 							</tr>
 						</tbody>
