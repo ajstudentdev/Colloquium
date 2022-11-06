@@ -37,6 +37,7 @@ jQuery(document).ready(function($) {
 /* ----- modal ------ */
 
 
+
 jQuery(function ($) {
   $('#basic-modal .basic1').click(function (e) {		$('#basic-modal-content1').modal();
       return false;
@@ -62,3 +63,9 @@ jQuery(function ($) {
     return false;
   });
 });
+
+
+
+/* ------- TEXT SLIDEIN EFFECT ---------- */
+
+

@@ -3,19 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="{{asset('incl/jquery.js')}}"></script>
 
         <title>Laravel</title>
 
     </head>
     <body class="antialiased">
-      
-<script src="{{asset('incl/jquery.js')}}"></script>
 
-<style>
 
-	
 
-</style>
+
 
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 	<div class="hamburger-menu">
