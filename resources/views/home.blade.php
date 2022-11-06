@@ -9,11 +9,7 @@
 
     </head>
     <body class="antialiased">
-
-
-
-
-
+  
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 	<div class="hamburger-menu">
 		<div class="hamburger"></div>
@@ -31,16 +27,16 @@
 	<div class="mask"></div>
 	<div class="container">
 		<div class="Title">
-			<h1>Nieuwe iPhone in de markt gebracht!</h1>
+			<h1>{{$data->first()->titel }}</h1>
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
-				<p style="padding:2%;">De laatste keer dat het iPhone-ontwerp drastisch veranderde, was bij de iPhone X in 2017. </p>
+				<p style="padding:2%;">{{$data->first()->beschrijving }} </p>
 			</div>
 		</div>
 		<div class="Avatar">
 			<div class="avatar-img"></div>
-			<div class="spreker-naam"> Steve Jobs </div>
+			<div class="spreker-naam">{{$data->first()->spreker }} </div>
 		</div>
 		<div class="Metadata">
 
@@ -56,15 +52,6 @@
 
 
 </style>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -95,10 +82,10 @@
                 <td class="column-name">TIJDSTIP</td>
               </tr>
               <tr>
-                <td>Presentatie</td>
-                <td>New York</td>
-                <td>01/11/2020</td>
-                <td>15:00 uur</td>
+                <td>{{$data->first()->type }}</td>
+                <td>{{$data->first()->locatie }}</td>
+                <td>{{$data->first()->datum }}</td>
+                <td>{{$data->first()->starttijd }} uur</td>
               </tr>
             </thead>
             </table>
@@ -127,15 +114,22 @@
 							</tr>
 						</thead>
 						<tbody id="basic-modal">
-							<tr class="clickable-row basic1" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
+
+                          @foreach($data as $item)
+
+                           <tr class="clickable-row basic1" data-href='#'>
+								<td class="hidemobile">{{ $item->type }}</td>
+								<td>{{ $item->spreker }}</td>
+								<td>{{ $item->titel }}</td>
+								<td class="hidemobile">{{ $item->datum }}</td>
+								<td>{{ $item->starttijd }}</td>
+								<td class="hidemobile">{{ $item->duur }}</td>
+								<td>{{ $item->locatie }}</td>
 							</tr>
+                        @endforeach
+
+							
+                            <!--
 							<tr class="clickable-row basic2" data-href='#'>
 								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
@@ -171,12 +165,12 @@
 								<td>inhoud</td>
 								<td class="hidemobile">inhoud</td>
 								<td>inhoud</td>
-							</tr>
+							</tr>-->
 						</tbody>
 					</table>
 				</div>
 				<div class="upcoming-container-right">
-					<img class="qrcode" src="./content/qrcode_example.gif">
+					<img class="qrcode" width="150px" height:"70px" src="{{$data->first()->qrcode }}">
 					</div>
 				</div>
 			</div>
