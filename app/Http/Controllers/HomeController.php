@@ -34,10 +34,19 @@ class HomeController extends BaseController
     */
     public function login()
     {
-
-
-
-        //Return the view
+            //Return the view
         return view('login');
+    }
+
+
+
+    /*
+    Returns managepage
+    GET
+    */
+    public function manage()
+    {
+            //Return the view
+        return view('manage');
     }
 }

@@ -19,3 +19,6 @@ Route::get('/', [HomeController::class, 'home']);
 
 //Route for the login page
 Route::get('/login', [HomeController::class, 'login']);
+
+//Route for the manage page
+Route::get('/manage', [HomeController::class, 'manage']);
