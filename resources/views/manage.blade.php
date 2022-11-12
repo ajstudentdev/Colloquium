@@ -41,21 +41,109 @@
 	</navbar>
     	<div class="mask"></div>
 
-	<div class="manage-page">
 
-        <h2>Sessie toevoegen</h2>
-		<div class="manageform">
+<script>
+
+    /* ---- wissel de schermen ---- */
+
+   $(window).load(function(){
+        $('.open-add-screen, .open-overview-screen').on('click',
+            function()
+            {
+                $('.manage-page-add-container, .manage-page-overview-container').toggle()
+            }
+        );
+    });
+
+</script>
 
 
-                    <h3>Omschrijving</h3>
-                <p>De omschrijving mag maximaal 400 karakters zijn </p>
-            	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters">0</span> karakters getypt</p>.
 
-			<form class="manage-form">
+<div class="manage-page-overview-container">
+
+    <h2 style="text-align:center;">Aankomende sessies</h2>
+
+        <div style= "width: 745px;" class="manage-page-overview">
+ 
+            <button class="open-add-screen">Voeg een sessie toe</button>
+
+            			<table style="margin-top:50px" class="upcoming-table">
+						<thead>
+							<tr>
+								<th class="hidemobile">Type</th>
+								<th>Naam spreker</th>
+								<th>Titel</th>
+								<th class="hidemobile">Datum</th>
+								<th>Starttijd</th>
+								<th class="hidemobile">Duur</th>
+								<th>Locatie</th>
+							</tr>
+						</thead>
+						<tbody id="basic-modal">
+							<tr class="clickable-row basic2" data-href='#'>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+							</tr>
+							<tr class="clickable-row basic3" data-href='#'>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+							</tr>
+							<tr class="clickable-row basic4" data-href='#'>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+							</tr>
+							<tr class="clickable-row basic5" data-href='#'>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+								<td class="hidemobile">inhoud</td>
+								<td>inhoud</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+
+
+        </div>
+
+</div>
+
+
+
+
+
+	<div class="manage-page-add-container" style="display:none">
+            <h2>Sessie toevoegen</h2>
+		<div class="manageform-add">
+
+        <button class="open-overview-screen">< Terug naar overzicht</button>
+			<form style="margin-top:50px" class="manage-form-add">
 
                 <h3>Titel</h3>
                 <input type="textbox" placeholder="titel"/>
+
+                <h3>Omschrijving</h3>
+                <p>De omschrijving mag maximaal 400 karakters zijn </p>
+            	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
+                <p class="aantal">Je hebt nu <span id="characters">0</span> karakters getypt</p>.
      
                 <h3>Spreker naam</h3>
                 <input type="textbox" placeholder="spreker naam"/>

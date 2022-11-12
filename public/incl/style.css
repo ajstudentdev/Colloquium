@@ -475,7 +475,7 @@ tr.clickable-row:hover {
 }
 
 
-/* ---------------  login pagina --------------- */
+/* ---------------  login pagina en managepagina --------------- */
 
 
 .login-page {
@@ -484,25 +484,23 @@ tr.clickable-row:hover {
 	margin: auto;
 }
 
-
-.manage-page {
+.manage-page-add-container, .manage-page-overview-container {
 	width: 560px;
 	padding: 8% 0 0;
 	margin: auto;
 }
 
-.loginform, .manageform {
+.loginform, .manageform-add, .manage-page-overview {
 	position: relative;
 	z-index: 1;
 	background: #FFFFFF;
-	max-width: 360px;
 	margin: 0 auto 100px;
 	padding: 45px;
 	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.loginform input, .manageform input, .manageform textarea {
+.loginform input, .manageform-add input, .manageform-add textarea {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
 	background: #f2f2f2;
@@ -514,12 +512,12 @@ tr.clickable-row:hover {
 	font-size: 14px;
 }
 
-.manageform textarea {
+.manageform-add textarea {
     height:150px;
     resize: none; 
 }
 
-.loginform button, .manageform button {
+button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
@@ -534,27 +532,27 @@ tr.clickable-row:hover {
 	cursor: pointer;
 }
 
-.loginform button:hover, .loginform button:active, .loginform button:focus, .manageform button:hover, .manageform button:active, .manageform button:focus {
+button:hover, button:active, button:focus {
 	background: #43A047;
 }
 
-.loginform .message, .manageform .message {
+.loginform .message, .manageform-add .message {
 	margin: 15px 0 0;
 	color: #838383;
 	text-shadow: 1px 1px 3px #b7b7b7;
 	font-size: 12px;
 }
 
-.loginform .message a, .manageform .message a {
+.loginform .message a, .manageform-add .message a {
 	color: #EE7B00;
 	text-decoration: none;
 }
 
-.loginform .register-form, .manageform .register-form {
+.loginform .register-form, .manageform-add .register-form {
 	display: none;
 }
 
-.manageform .aantal {
+.manageform-add .aantal {
     margin-top:-10px;
     font-size:13px;
 }
@@ -659,24 +657,24 @@ tr.clickable-row:hover {
 /* -------- MANAGE FORM --------- */
 
 
-div.manage-page > div > form > textarea {
+div.manage-page-add-container > div > form > textarea {
     height:150px!important;
 }
 
-div.manage-page > div {
+div.manage-page-add-container > div {
     color:#000;
         text-shadow: 2px 2px 8px #b3b3b3!important;
 }
 
-div.manage-page > h2 {
+div.manage-page-add-container > h2 {
     text-align:center;
     font-size:30px;
 }
 
-div.manage-page button {
+div.manage-page-add-container button {
     margin-top:40px;
 }
 
-.manageform {
+.manageform-add {
     max-width:600px!important;
 }
