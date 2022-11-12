@@ -39,20 +39,44 @@
 			</li>
 		</ul>
 	</navbar>
-	<div class="mask"></div>
-	<div class="login-page">
-		<div class="loginform">
+    	<div class="mask"></div>
 
-			<form class="login-form">
-            	<input type="textbox" placeholder="omschrijving"/>
-				<input type="text" placeholder="username"/>
-                <input type="starttijd" placeholder="starttijd"/>
-                <input type="duur" placeholder="duur"/>
+	<div class="manage-page">
+
+        <h2>Sessie toevoegen</h2>
+		<div class="manageform">
+
+
+                    <h3>Omschrijving</h3>
+                <p>De omschrijving mag maximaal 400 karakters zijn </p>
+            	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
+                <p class="aantal">Je hebt nu <span id="characters">0</span> karakters getypt</p>.
+
+			<form class="manage-form">
+
+                <h3>Titel</h3>
+                <input type="textbox" placeholder="titel"/>
+     
+                <h3>Spreker naam</h3>
+                <input type="textbox" placeholder="spreker naam"/>
+
+                <h3>Locatie en/of ruimte</h3>
                 <input type="locatie" placeholder="locatie"/>
+
+                <h3>Datum</h3>
+				<input type="date" placeholder="datum"/>
+
+                <h3>Starttijd van sessie</h3>
+                <input type="time" placeholder="starttijd"/>
+
+                <h3>Duur in minuten</h3>
+                <input type="number" placeholder="duur"/>
+
 				<button>opslaan</button>
 
-			</form>
+			 </form>
 		</div>
+
 	</div>
 
   	<script src="{{asset('incl/scripts.js')}}"></script>

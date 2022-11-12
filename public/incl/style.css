@@ -484,7 +484,14 @@ tr.clickable-row:hover {
 	margin: auto;
 }
 
-.loginform {
+
+.manage-page {
+	width: 560px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.loginform, .manageform {
 	position: relative;
 	z-index: 1;
 	background: #FFFFFF;
@@ -495,7 +502,7 @@ tr.clickable-row:hover {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.loginform input {
+.loginform input, .manageform input, .manageform textarea {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
 	background: #f2f2f2;
@@ -507,7 +514,12 @@ tr.clickable-row:hover {
 	font-size: 14px;
 }
 
-.loginform button {
+.manageform textarea {
+    height:150px;
+    resize: none; 
+}
+
+.loginform button, .manageform button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
@@ -522,24 +534,29 @@ tr.clickable-row:hover {
 	cursor: pointer;
 }
 
-.loginform button:hover, .loginform button:active, .loginform button:focus {
+.loginform button:hover, .loginform button:active, .loginform button:focus, .manageform button:hover, .manageform button:active, .manageform button:focus {
 	background: #43A047;
 }
 
-.loginform .message {
+.loginform .message, .manageform .message {
 	margin: 15px 0 0;
 	color: #838383;
 	text-shadow: 1px 1px 3px #b7b7b7;
 	font-size: 12px;
 }
 
-.loginform .message a {
+.loginform .message a, .manageform .message a {
 	color: #EE7B00;
 	text-decoration: none;
 }
 
-.loginform .register-form {
+.loginform .register-form, .manageform .register-form {
 	display: none;
+}
+
+.manageform .aantal {
+    margin-top:-10px;
+    font-size:13px;
 }
 
 # -------- modal --------#
@@ -639,6 +656,27 @@ tr.clickable-row:hover {
 }
 
 
-/* -------- TEXT SLIDEIN ANIMATION --------- */
+/* -------- MANAGE FORM --------- */
 
 
+div.manage-page > div > form > textarea {
+    height:150px!important;
+}
+
+div.manage-page > div {
+    color:#000;
+        text-shadow: 2px 2px 8px #b3b3b3!important;
+}
+
+div.manage-page > h2 {
+    text-align:center;
+    font-size:30px;
+}
+
+div.manage-page button {
+    margin-top:40px;
+}
+
+.manageform {
+    max-width:600px!important;
+}

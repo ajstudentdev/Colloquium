@@ -66,6 +66,23 @@ jQuery(function ($) {
 
 
 
-/* ------- TEXT SLIDEIN EFFECT ---------- */
+/* ------- FORM LIMIT TEXT  ---------- */
 
+/* weergeef aantal karakters textbox */
+$('#descriptionbox').keyup(updateCount);
+$('#descriptionbox').keydown(updateCount);
 
+function updateCount() {
+    var cs = $(this).val().length;
+    $('#characters').text(cs);
+}
+
+/*limiteer invoer */
+
+let name = document.getElementById('descriptionbox');
+
+name.addEventListener('keyup', () => {
+		if (name.value.length > 10) {
+    		name.value = name.value.slice(0, 400);
+    }
+})
