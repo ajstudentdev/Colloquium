@@ -37,6 +37,9 @@
 			<li class="navbar--item">
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
+            <li class="navbar--item">
+				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+			</li>
 		</ul>
 	</navbar>
     	<div class="mask"></div>
@@ -61,10 +64,12 @@
 
 <div class="manage-page-overview-container">
 
-    <h2 style="text-align:center;">Aankomende sessies</h2>
+    <h2 style="text-align:center;">Mijn sessies</h2>
 
-        <div style= "width: 745px;" class="manage-page-overview">
- 
+        <div style= "width: 80%;" class="manage-page-overview">
+
+             <p style="color:#000;text-shadow: 2px 2px 8px #b3b3b3!important;">Klik op een sessie om de sessie aan te passen. Sessies vanuit het verleden worden niet meer weergegeven op de hoofdpagina.</p>
+
             <button class="open-add-screen">Voeg een sessie toe</button>
 
             			<table style="margin-top:50px" class="upcoming-table">
@@ -138,18 +143,24 @@
 			<form style="margin-top:50px" class="manage-form-add">
 
                 <h3>Titel</h3>
-                <input type="textbox" placeholder="titel"/>
+                <p>De titel mag maximaal 40 karakters zijn </p>
+                <input id='titlebox' type="textbox" placeholder="titel"/>
+                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>.
 
                 <h3>Omschrijving</h3>
                 <p>De omschrijving mag maximaal 400 karakters zijn </p>
             	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters">0</span> karakters getypt</p>.
+                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>.
      
                 <h3>Spreker naam</h3>
-                <input type="textbox" placeholder="spreker naam"/>
+                <p>De spreker mag maximaal 40 karakters zijn </p>
+                <input id='sprekerbox' type="textbox" placeholder="spreker naam"/>
+                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>.
 
                 <h3>Locatie en/of ruimte</h3>
-                <input type="locatie" placeholder="locatie"/>
+                <p>De locatie mag maximaal 40 karakters zijn </p>
+                <input id='locatiebox' type="locatie" placeholder="locatie"/>
+                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>.
 
                 <h3>Datum</h3>
 				<input type="date" placeholder="datum"/>
@@ -158,7 +169,8 @@
                 <input type="time" placeholder="starttijd"/>
 
                 <h3>Duur in minuten</h3>
-                <input type="number" placeholder="duur"/>
+                <p>De duur mag maximaal 1200 minuten zijn </p>
+                <input type="number" max="1200" placeholder="duur"/>
 
 				<button>opslaan</button>
 

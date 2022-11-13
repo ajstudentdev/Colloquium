@@ -14,13 +14,28 @@ $(function(){
       $('.sliding-navbar').toggleClass('sliding-navbar--open');
       $('.mask').fadeToggle();
       $('.hamburger').toggleClass('menu-opened');
+
+
+ if ($(".menu-opened")[0]) {
+
+    /*scroll uitschakelen */
+    window.onscroll = function () { window.scrollTo(0, 0); };
+}
+else {
+    /*scroll inschakelen*/
+    window.onscroll = function() {};
+
+}
+
   });
 
   $('.mask').click(function(){
       $('.sliding-navbar').toggleClass('sliding-navbar--open');
       $('.mask').fadeToggle();
       $('.hamburger').toggleClass('menu-opened');
+      window.onscroll = function() {};
   })
+
 });
 
 
@@ -68,21 +83,80 @@ jQuery(function ($) {
 
 /* ------- FORM LIMIT TEXT  ---------- */
 
-/* weergeef aantal karakters textbox */
-$('#descriptionbox').keyup(updateCount);
-$('#descriptionbox').keydown(updateCount);
+/* weergeef aantal karakters textbox omschrijving */
+$('#descriptionbox').keyup(updateCountdescriptionbox);
+$('#descriptionbox').keydown(updateCountdescriptionbox);
 
-function updateCount() {
+function updateCountdescriptionbox() {
     var cs = $(this).val().length;
-    $('#characters').text(cs);
+    $('#characters-description').text(cs);
 }
 
-/*limiteer invoer */
+/*limiteer invoer omschrijving */
 
-let name = document.getElementById('descriptionbox');
+let namedescriptionbox = document.getElementById('descriptionbox');
 
-name.addEventListener('keyup', () => {
-		if (name.value.length > 10) {
-    		name.value = name.value.slice(0, 400);
+namedescriptionbox.addEventListener('keyup', () => {
+		if (namedescriptionbox.value.length > 10) {
+    		namedescriptionbox.value = namedescriptionbox.value.slice(0, 400);
     }
 })
+
+
+/* weergeef aantal karakters textbox title */
+$('#titlebox').keyup(updateCounttitlebox);
+$('#titlebox').keydown(updateCounttitlebox);
+
+/*limiteer invoer title */
+
+let nametitlebox = document.getElementById('titlebox');
+
+nametitlebox.addEventListener('keyup', () => {
+		if (nametitlebox.value.length > 10) {
+    		nametitlebox.value = nametitlebox.value.slice(0, 40);
+    }
+})
+
+function updateCounttitlebox() {
+    var cs = $(this).val().length;
+    $('#characters-title').text(cs);
+}
+
+
+/* weergeef aantal karakters textbox spreker */
+$('#sprekerbox').keyup(updateCountsprekerbox);
+$('#sprekerbox').keydown(updateCountsprekerbox);
+
+/*limiteer invoer spreker */
+
+let namesprekerbox = document.getElementById('sprekerbox');
+
+namesprekerbox.addEventListener('keyup', () => {
+		if (namesprekerbox.value.length > 10) {
+    		namesprekerbox.value = namesprekerbox.value.slice(0, 40);
+    }
+})
+
+function updateCountsprekerbox() {
+    var cs = $(this).val().length;
+    $('#characters-spreker').text(cs);
+}
+
+/* weergeef aantal karakters textbox locatie */
+$('#locatiebox').keyup(updateCountlocatiebox);
+$('#locatiebox').keydown(updateCountlocatiebox);
+
+/*limiteer invoer locatie */
+
+let namelocatiebox = document.getElementById('locatiebox');
+
+namelocatiebox.addEventListener('keyup', () => {
+		if (namelocatiebox.value.length > 10) {
+    		namelocatiebox.value = namelocatiebox.value.slice(0, 40);
+    }
+})
+
+function updateCountlocatiebox() {
+    var cs = $(this).val().length;
+    $('#characters-locatie').text(cs);
+}

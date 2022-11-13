@@ -22,6 +22,9 @@
 			<li class="navbar--item">
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
+            <li class="navbar--item">
+				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+			</li>
 		</ul>
 	</navbar>
 	<div class="mask"></div>
