@@ -4,9 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="{{asset('incl/jquery.js')}}"></script>
-
         <title>Laravel</title>
-
     </head>
     <body class="antialiased">
   
@@ -79,7 +77,6 @@
               </tr>
             </thead>
             </table>
-
 		</div>
 		<div class="Logo-company">
 			<div class="logo-company-container">
@@ -123,7 +120,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div id="basic-modal-content1">
 				<h3>titel1</h3>
 				<p>inhoud van de modalbox1</p>
@@ -145,9 +141,7 @@
 				<p>inhoud van de modalbox5</p>
 			</div>
 		</div>
-
-<script src="{{asset('incl/scripts.js')}}"></script>
-<script src="{{asset('incl/jquery.simplemodal.js')}}"></script>
-
+        <script src="{{asset('incl/scripts.js')}}"></script>
+        <script src="{{asset('incl/jquery.simplemodal.js')}}"></script>
     </body>
 </html>
