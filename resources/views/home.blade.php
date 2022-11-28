@@ -30,16 +30,16 @@
 	<div class="mask"></div>
 	<div class="container">
 		<div class="Title">
-			<h1>{{$data->first()->titel }}</h1>
+			<h1></h1> 
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
-				<p style="padding:2%;">{{$data->first()->beschrijving }} </p>
+				<p style="padding:2%;"> </p>
 			</div>
 		</div>
 		<div class="Avatar">
 			<div class="avatar-img"></div>
-			<div class="spreker-naam">{{$data->first()->spreker }} </div>
+			<div class="spreker-naam"> </div>
 		</div>
 		<div class="Metadata">
 
@@ -85,10 +85,7 @@
                 <td class="column-name">TIJDSTIP</td>
               </tr>
               <tr>
-                <td>{{$data->first()->type }}</td>
-                <td>{{$data->first()->locatie }}</td>
-                <td>{{$data->first()->datum }}</td>
-                <td>{{$data->first()->starttijd }} uur</td>
+              
               </tr>
             </thead>
             </table>
@@ -121,13 +118,13 @@
                           @foreach($data as $item)
 
                            <tr class="clickable-row basic1" data-href='#'>
-								<td class="hidemobile">{{ $item->type }}</td>
-								<td>{{ $item->spreker }}</td>
-								<td>{{ $item->titel }}</td>
-								<td class="hidemobile">{{ $item->datum }}</td>
-								<td>{{ $item->starttijd }}</td>
-								<td class="hidemobile">{{ $item->duur }}</td>
-								<td>{{ $item->locatie }}</td>
+								<td class="hidemobile">{{ $item->Colloquium }}</td>
+								<td>Berend broekjes</td>
+								<td>{{ $item->Titel }}</td>
+								<td class="hidemobile">{{ $item->Datum }}</td>
+								<td>{{ $item->Start_tijd }}</td>
+								<td class="hidemobile">{{ $item->Duur }}</td>
+								<td>{{ $item->Locatie }}</td>
 							</tr>
                         @endforeach
 
@@ -173,7 +170,6 @@
 					</table>
 				</div>
 				<div class="upcoming-container-right">
-					<img class="qrcode" width="150px" height:"70px" src="{{$data->first()->qrcode }}">
 					</div>
 				</div>
 			</div>

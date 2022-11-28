@@ -21,7 +21,7 @@ class HomeController extends BaseController
     public function home()
     {
         //Get the data for the homepage
-        $data = DB::table('item')->get();
+        $data = DB::table('lezing')->get();
        
 
         //Return the view
