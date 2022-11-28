@@ -34,7 +34,7 @@
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
-				<p style="padding:2%;"> </p>
+				<p> CONTENT OMSCHRIJVING! </p>
 			</div>
 		</div>
 		<div class="Avatar">
@@ -42,22 +42,6 @@
 			<div class="spreker-naam"> </div>
 		</div>
 		<div class="Metadata">
-
-
-
-        <style>
-
-
-.point {
-  stroke: white;
-  stroke-width: 0.5;
-}
-
-
-</style>
-
-
-
             <table class="metadata-table">
             <thead>
               <tr>
@@ -83,6 +67,12 @@
                      </svg>
                 </td>
                 <td class="column-name">TIJDSTIP</td>
+                <tr>
+                    <td>CONTENT TYPE!</td>
+                    <td>CONTENT LOCATIE!</td>
+                    <td>CONTENT DATUM!</td>
+                    <td>CONTENT TIJDSTIP!</td>
+                </tr>
               </tr>
               <tr>
               
@@ -90,14 +80,12 @@
             </thead>
             </table>
 
-
-
 		</div>
 		<div class="Logo-company">
 			<div class="logo-company-container">
 				<img class="logo-company-img" src="./content/apple.png">
 				</div>
-				<div class="naam-company">Apple</div>
+				<div class="naam-company">CONTENT BEDRIJFSNAAM!</div>
 			</div>
 			<div class="Upcoming">
 				<div class="upcoming-container-left">
@@ -128,44 +116,6 @@
 							</tr>
                         @endforeach
 
-							
-                            <!--
-							<tr class="clickable-row basic2" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
-							<tr class="clickable-row basic3" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
-							<tr class="clickable-row basic4" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
-							<tr class="clickable-row basic5" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>-->
 						</tbody>
 					</table>
 				</div>

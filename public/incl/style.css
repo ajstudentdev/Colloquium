@@ -501,7 +501,16 @@ tr.clickable-row:hover {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.loginform input, .manageform-add input, .manageform-add textarea {
+.point {
+  stroke: white;
+  stroke-width: 0.5;
+}
+
+.omschrijving-lezing p {
+    padding:2%;
+}
+
+.loginform input, .manageform-add input, .manageform-add textarea, .manageform-add select {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
 	background: #f2f2f2;

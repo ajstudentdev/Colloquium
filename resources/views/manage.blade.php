@@ -142,6 +142,14 @@
         <button class="open-overview-screen">< Terug naar overzicht</button>
 			<form style="margin-top:50px" class="manage-form-add">
 
+                <h3>Type</h3>
+                <select id="cars" name="cars">
+                  <option value="Type 1">Type 1</option>
+                  <option value="Type 2">Type 2</option>
+                  <option value="Type 3">Type 3</option>
+                  <option value="Type 4">Type 4</option>
+                </select>
+
                 <h3>Titel</h3>
                 <p>De titel mag maximaal 40 karakters zijn </p>
                 <input id='titlebox' type="textbox" placeholder="titel"/>
