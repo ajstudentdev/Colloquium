@@ -32,7 +32,27 @@
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
-				<p> CONTENT OMSCHRIJVING! </p>
+
+<style>
+
+.omschrijvingcontainer {
+    text-align: center;
+}
+
+.omschrijving, .locatie, .tijd, .datum {
+    height: 0;
+    margin: auto;
+    text-align: center;
+}
+
+</style>
+
+  <div style='' class='omschrijvingcontainer'>
+    @foreach($data as $item)
+        <h1 class='omschrijving'>{{ $item->Omschrijving }}</h1>
+    @endforeach
+  </div>
+
 			</div>
 		</div>
 		<div class="Avatar">
@@ -67,9 +87,33 @@
                 <td class="column-name">TIJDSTIP</td>
                 <tr>
                     <td>CONTENT TYPE!</td>
-                    <td>CONTENT LOCATIE!</td>
-                    <td>CONTENT DATUM!</td>
-                    <td>CONTENT TIJDSTIP!</td>
+                    <td>
+                        <div class="locatiecontainer">
+                            @foreach($data as $item)
+                                <div class="locatie">
+                                {{ $item->Locatie }}
+                                </div>
+                            @endforeach
+                         </div>
+                     </td>
+                    <td>
+                        <div class="datumcontainer">
+                            @foreach($data as $item)
+                                <div class="datum">
+                                {{ $item->Datum }}
+                                </div>
+                            @endforeach
+                         </div>
+                     </td>
+                    <td>
+                        <div class="tijdcontainer">
+                            @foreach($data as $item)
+                                <div class="tijd">
+                                {{ $item->Start_tijd }}
+                                </div>
+                            @endforeach
+                         </div>
+                     </td>
                 </tr>
               </tr>
               <tr>
@@ -100,9 +144,11 @@
 						</thead>
 						<tbody id="basic-modal">
 
+                        <?php $rownumber=0; ?>
+
                           @foreach($data as $item)
 
-                           <tr class="clickable-row basic1" data-href='#'>
+                           <tr class="clickable-row basic1 row{{++$rownumber}}" data-href='#'>
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
 								<td>Berend broekjes</td>
 								<td>{{ $item->Titel }}</td>
@@ -111,6 +157,7 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
 							</tr>
+
                         @endforeach
 
 						</tbody>

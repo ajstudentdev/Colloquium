@@ -1,4 +1,67 @@
 
+/* ----------- TEXT SLIDERS ------ */
+
+
+ $(document).ready(function(){
+
+  $(function(){
+
+    $('.tijdcontainer .tijd:gt(0)').hide();
+    setInterval(function(){
+      $('.tijdcontainer :first-child').fadeOut(2000).next('.tijd').fadeIn(2000)
+      .end().appendTo('.tijdcontainer');
+  }, 7000);
+
+  });
+
+});
+
+$(document).ready(function(){
+
+  $(function(){
+
+    $('.datumcontainer .datum:gt(0)').hide();
+    setInterval(function(){
+      $('.datumcontainer :first-child').fadeOut(2000).next('.datum').fadeIn(2000)
+      .end().appendTo('.datumcontainer');
+  }, 7000);
+
+  });
+
+});
+
+$(document).ready(function(){
+
+  $(function(){
+
+    $('.locatiecontainer .locatie:gt(0)').hide();
+    setInterval(function(){
+      $('.locatiecontainer :first-child').fadeOut(2000).next('.locatie').fadeIn(2000)
+      .end().appendTo('.locatiecontainer');
+  }, 7000);
+
+  });
+
+});
+
+
+$(document).ready(function(){
+
+  $(function(){
+
+    $('.omschrijvingcontainer .omschrijving:gt(0)').hide();
+    setInterval(function(){
+      $('.omschrijvingcontainer :first-child').fadeOut(2000).next('.omschrijving').fadeIn(2000)
+      .end().appendTo('.omschrijvingcontainer');
+  }, 7000);
+
+  });
+
+});
+
+
+
+
 
 /* -----loginform ------ */
 
@@ -160,3 +223,5 @@ function updateCountlocatiebox() {
     var cs = $(this).val().length;
     $('#characters-locatie').text(cs);
 }
+
+
