@@ -7,6 +7,7 @@
         <title>Laravel</title>
     </head>
     <body class="antialiased">
+
   
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 	<div class="hamburger-menu">
@@ -33,25 +34,11 @@
 		<div class="Description">
 			<div class="omschrijving-lezing">
 
-<style>
-
-.omschrijvingcontainer {
-    text-align: center;
-}
-
-.omschrijving, .locatie, .tijd, .datum {
-    height: 0;
-    margin: auto;
-    text-align: center;
-}
-
-</style>
-
-  <div style='' class='omschrijvingcontainer'>
-    @foreach($data as $item)
-        <h1 class='omschrijving'>{{ $item->Omschrijving }}</h1>
-    @endforeach
-  </div>
+                  <div style='' class='omschrijvingcontainer'>
+                    @foreach($data as $item)
+                        <h1 class='omschrijving'>{{ $item->Omschrijving }}</h1>
+                    @endforeach
+                  </div>
 
 			</div>
 		</div>
@@ -116,9 +103,6 @@
                      </td>
                 </tr>
               </tr>
-              <tr>
-              
-              </tr>
             </thead>
             </table>
 		</div>
@@ -142,13 +126,24 @@
 								<th>Locatie</th>
 							</tr>
 						</thead>
-						<tbody id="basic-modal">
 
+
+                        
+ <style>
+  .focused {
+    background: red!important;
+    -webkit-transition:background 0s;
+    -moz-transition:background 0s;
+    -o-transition:background 0s;
+    transition:background 0s
+  }
+  </style>
+						<tbody id="basic-modal" class="sessions">
                         <?php $rownumber=0; ?>
 
                           @foreach($data as $item)
 
-                           <tr class="clickable-row basic1 row{{++$rownumber}}" data-href='#'>
+                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
 								<td>Berend broekjes</td>
 								<td>{{ $item->Titel }}</td>
@@ -188,6 +183,23 @@
 				<p>inhoud van de modalbox5</p>
 			</div>
 		</div>
+
+        <script>
+
+var divs = $('.clickable-row');
+var i = 0;
+
+function step() {
+    if (i >= divs.length)
+        i = 0;
+    $('.focused').removeClass('focused');
+    $(divs[i]).addClass('focused');
+    i++;
+}
+
+setInterval(step, 3000);
+
+</script>
         <script src="{{asset('incl/scripts.js')}}"></script>
         <script src="{{asset('incl/jquery.simplemodal.js')}}"></script>
     </body>

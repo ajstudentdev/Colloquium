@@ -51,17 +51,17 @@ $(document).ready(function(){
 
     $('.omschrijvingcontainer .omschrijving:gt(0)').hide();
     setInterval(function(){
-      $('.omschrijvingcontainer :first-child').fadeOut(2000).next('.omschrijving').fadeIn(2000)
+      $('.omschrijvingcontainer :first-child').fadeOut(0000).next('.omschrijving').fadeIn(0000)
       .end().appendTo('.omschrijvingcontainer');
-  }, 7000);
+  }, 4000);
 
   });
 
 });
 
-
-
-
+$(function() {
+        $('#row1').addClass('focused');
+});
 
 /* -----loginform ------ */
 

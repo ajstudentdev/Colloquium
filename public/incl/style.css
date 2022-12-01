@@ -506,6 +506,17 @@ tr.clickable-row:hover {
   stroke-width: 0.5;
 }
 
+
+.omschrijvingcontainer {
+    text-align: center;
+}
+
+.omschrijving, .locatie, .tijd, .datum {
+    height: 0;
+    margin: auto;
+    text-align: center;
+}
+
 .omschrijving-lezing p {
     padding:2%;
 }
