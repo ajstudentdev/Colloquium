@@ -1,25 +1,20 @@
 
 /* ----------- TEXT SLIDERS ------ */
 
-
-$(function() {
-        $('#row1').addClass('focused');
-});
-
-
-
 $(function(){
 
+/*highlight de eerste tabelrow bij het laden van de pagina */
+$('#row1').addClass('focused');
 
-var divs = $('.clickable-row');
+var tabledivs = $('.clickable-row');
 var i = 1;
 
 /* verander de gefocuste tabelrow */
 function stepTable() {
-    if (i >= divs.length)
+    if (i >= tabledivs.length)
         i = 0;
     $('.focused').removeClass('focused');
-    $(divs[i]).addClass('focused');
+    $(tabledivs[i]).addClass('focused');
     i++;
 }
 
@@ -37,7 +32,6 @@ function stepDatum(){
     .end().appendTo('.datumcontainer');
 }
 
-
 /* verander de locatie */
 $('.locatiecontainer .locatie:gt(0)').hide();
 function stepLocatie(){
@@ -45,24 +39,23 @@ function stepLocatie(){
     .end().appendTo('.locatiecontainer');
 }
 
+/* verander de omschrijving */
+$('.omschrijvingcontainer .omschrijving:gt(0)').hide();
+function stepOmschrijving(){
+    $('.omschrijvingcontainer :first-child').fadeOut(1000).next('.omschrijving').fadeIn(1000)
+    .end().appendTo('.omschrijvingcontainer');
+}
+
 /* hoofdfunctie, haalt omschrijving op en start andere functies om content te wijzigen */
   $(function(){
-
-    $('.omschrijvingcontainer .omschrijving:gt(0)').hide();
     setInterval(function(){
       stepTable();
       stepTijd();
       stepDatum();
       stepLocatie();
-      $('.omschrijvingcontainer :first-child').fadeOut(1000).next('.omschrijving').fadeIn(1000)
-      .end().appendTo('.omschrijvingcontainer');
-
-
-
+      stepOmschrijving();
   }, 7000);
-
   });
-
 });
 
 /* -----loginform ------ */
