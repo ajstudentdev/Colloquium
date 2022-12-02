@@ -21,8 +21,13 @@ class HomeController extends BaseController
     public function home()
     {
         //Get the data for the homepage
-        $data = DB::table('lezing')->get();
-       
+        //DB::table('lezing')->with('spreker')->get();
+
+        $data = DB::table('spreker')
+      //  ->select('users.id','users.name','profiles.photo')
+        ->join('lezing','spreker.Spreker_ID','=','lezing.Spreker_ID')
+       // ->where(['something' => 'something', 'otherThing' => 'otherThing'])
+        ->get();
 
         //Return the view
         return view('home',compact('data'));

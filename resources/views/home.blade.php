@@ -71,7 +71,15 @@
                 </td>
                 <td class="column-name">TIJDSTIP</td>
                 <tr>
-                    <td>CONTENT TYPE!</td>
+                    <td>
+                    <div class="typecontainer">
+                            @foreach($data as $item)
+                                <div class="type">
+                                {{ $item->Colloquium }}
+                                </div>
+                            @endforeach
+                         </div>
+                    </td>
                     <td>
                         <div class="locatiecontainer">
                             @foreach($data as $item)
@@ -85,7 +93,9 @@
                         <div class="datumcontainer">
                             @foreach($data as $item)
                                 <div class="datum">
-                                {{ $item->Datum }}
+                                {{date('d-m-Y', strtotime($item->Datum))}}
+
+                              
                                 </div>
                             @endforeach
                          </div>
@@ -106,9 +116,17 @@
 		</div>
 		<div class="Logo-company">
 			<div class="logo-company-container">
-				<img class="logo-company-img" src="./content/apple.png">
+				<img class="logo-company-img" src="img/sony.jpg"> <!--  asset($data->Logo_bedrijf) -->
 				</div>
-				<div class="naam-company">CONTENT BEDRIJFSNAAM!</div>
+				<div class="naam-company">
+                 <div class="bedrijfsnaamcontainer">
+                            @foreach($data as $item)
+                                <div class="bedrijfsnaam">
+                                {{ $item->Bedrijfsnaam }}
+                                </div>
+                            @endforeach
+                         </div>
+                </div>
 			</div>
 			<div class="Upcoming">
 				<div class="upcoming-container-left">
@@ -132,10 +150,12 @@
 
                            <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
-								<td>Berend broekjes</td>
+								<td>{{ $item->Naam }}</td>
 								<td>{{ $item->Titel }}</td>
-								<td class="hidemobile">{{ $item->Datum }}</td>
-								<td>{{ $item->Start_tijd }}</td>
+                                  
+								<td class="hidemobile">{{date('d-m-Y', strtotime($item->Datum))}}</td>
+								<td>
+                                {{date('H:i', strtotime($item->Start_tijd))}}</td>
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
 							</tr>
