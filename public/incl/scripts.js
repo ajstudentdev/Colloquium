@@ -2,9 +2,6 @@
 /* ----------- TEXT SLIDERS ------ */
 
 
-
-
-
 $(function() {
         $('#row1').addClass('focused');
 });

@@ -73,6 +73,19 @@ h1 {
 	grid-auto-flow: row;
 }
 
+
+  .focused {
+    background-color:#FFF!important;
+    -webkit-box-shadow:0 0 20px #FFF; 
+    -moz-box-shadow: 0 0 20px #FFF; 
+    box-shadow:0 0 20px #FFF;
+    -webkit-transition:background 1s;
+    -moz-transition:background 1s;
+    -o-transition:background 1s;
+    transition:background 1s;
+    font-weight:bolder!important;
+  }
+
 @media screen and (min-width : 1051px) {
 	.container {
 		max-height: 90vh;
