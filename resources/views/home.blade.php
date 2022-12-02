@@ -8,6 +8,41 @@
     </head>
     <body class="antialiased">
 
+
+
+
+
+
+
+        <script>
+
+
+/* 
+var divs = $('.clickable-row');
+var i = 0;
+
+function step() {
+    if (i >= divs.length)
+        i = 0;
+    $('.focused').removeClass('focused');
+    $(divs[i]).addClass('focused');
+    i++;
+}
+
+setInterval(step, 3000);
+
+
+*/
+
+
+
+
+
+</script>
+
+
+
+
   
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 	<div class="hamburger-menu">
@@ -131,11 +166,15 @@
                         
  <style>
   .focused {
-    background: red!important;
-    -webkit-transition:background 0s;
-    -moz-transition:background 0s;
-    -o-transition:background 0s;
-    transition:background 0s
+    background-color:#FFF!important;
+    -webkit-box-shadow:0 0 20px #FFF; 
+    -moz-box-shadow: 0 0 20px #FFF; 
+    box-shadow:0 0 20px #FFF;
+    -webkit-transition:background 1s;
+    -moz-transition:background 1s;
+    -o-transition:background 1s;
+    transition:background 1s;
+    font-weight:bolder!important;
   }
   </style>
 						<tbody id="basic-modal" class="sessions">
@@ -184,22 +223,6 @@
 			</div>
 		</div>
 
-        <script>
-
-var divs = $('.clickable-row');
-var i = 0;
-
-function step() {
-    if (i >= divs.length)
-        i = 0;
-    $('.focused').removeClass('focused');
-    $(divs[i]).addClass('focused');
-    i++;
-}
-
-setInterval(step, 3000);
-
-</script>
         <script src="{{asset('incl/scripts.js')}}"></script>
         <script src="{{asset('incl/jquery.simplemodal.js')}}"></script>
     </body>

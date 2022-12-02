@@ -2,65 +2,70 @@
 /* ----------- TEXT SLIDERS ------ */
 
 
- $(document).ready(function(){
 
-  $(function(){
 
-    $('.tijdcontainer .tijd:gt(0)').hide();
-    setInterval(function(){
-      $('.tijdcontainer :first-child').fadeOut(2000).next('.tijd').fadeIn(2000)
-      .end().appendTo('.tijdcontainer');
-  }, 7000);
 
-  });
-
-});
-
-$(document).ready(function(){
-
-  $(function(){
-
-    $('.datumcontainer .datum:gt(0)').hide();
-    setInterval(function(){
-      $('.datumcontainer :first-child').fadeOut(2000).next('.datum').fadeIn(2000)
-      .end().appendTo('.datumcontainer');
-  }, 7000);
-
-  });
-
-});
-
-$(document).ready(function(){
-
-  $(function(){
-
-    $('.locatiecontainer .locatie:gt(0)').hide();
-    setInterval(function(){
-      $('.locatiecontainer :first-child').fadeOut(2000).next('.locatie').fadeIn(2000)
-      .end().appendTo('.locatiecontainer');
-  }, 7000);
-
-  });
-
+$(function() {
+        $('#row1').addClass('focused');
 });
 
 
-$(document).ready(function(){
 
+$(function(){
+
+
+var divs = $('.clickable-row');
+var i = 1;
+
+/* verander de gefocuste tabelrow */
+function stepTable() {
+    if (i >= divs.length)
+        i = 0;
+    $('.focused').removeClass('focused');
+    $(divs[i]).addClass('focused');
+    i++;
+}
+
+/* verander de tijd */
+$('.tijdcontainer .tijd:gt(0)').hide();
+function stepTijd(){
+    $('.tijdcontainer :first-child').fadeOut(1000).next('.tijd').fadeIn(1000)
+    .end().appendTo('.tijdcontainer');
+}
+
+/* verander de datum */
+$('.datumcontainer .datum:gt(0)').hide();
+function stepDatum(){
+    $('.datumcontainer :first-child').fadeOut(1000).next('.datum').fadeIn(1000)
+    .end().appendTo('.datumcontainer');
+}
+
+
+/* verander de locatie */
+$('.locatiecontainer .locatie:gt(0)').hide();
+function stepLocatie(){
+    $('.locatiecontainer :first-child').fadeOut(1000).next('.locatie').fadeIn(1000)
+    .end().appendTo('.locatiecontainer');
+}
+
+/* hoofdfunctie, haalt omschrijving op en start andere functies om content te wijzigen */
   $(function(){
 
     $('.omschrijvingcontainer .omschrijving:gt(0)').hide();
     setInterval(function(){
-      $('.omschrijvingcontainer :first-child').fadeOut(0000).next('.omschrijving').fadeIn(0000)
+      stepTable();
+      stepTijd();
+      stepDatum();
+      stepLocatie();
+      $('.omschrijvingcontainer :first-child').fadeOut(1000).next('.omschrijving').fadeIn(1000)
       .end().appendTo('.omschrijvingcontainer');
-  }, 4000);
+
+
+
+  }, 7000);
 
   });
 
-});
-
-$(function() {
-        $('#row1').addClass('focused');
 });
 
 /* -----loginform ------ */
