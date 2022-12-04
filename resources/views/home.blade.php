@@ -116,7 +116,7 @@
 		</div>
 		<div class="Logo-company">
 			<div class="logo-company-container">
-				<img class="logo-company-img" src="img/sony.jpg"> <!--  asset($data->Logo_bedrijf) -->
+				<img class="logo-company-img" src="content/sony.jpg"> <!--  asset($data->Logo_bedrijf) -->
 				</div>
 				<div class="naam-company">
                  <div class="bedrijfsnaamcontainer">
