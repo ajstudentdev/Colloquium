@@ -34,7 +34,7 @@
 
                   <div style='' class='omschrijvingcontainer'>
                     @foreach($data as $item)
-                        <h1 class='omschrijving'>{{ $item->Omschrijving }}</h1>
+                        <p class='omschrijving'>{{ $item->Omschrijving }}</p>
                     @endforeach
                   </div>
 
