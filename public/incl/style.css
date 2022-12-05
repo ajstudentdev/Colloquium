@@ -277,13 +277,9 @@ html, body, {
 .avatar-img {
 	width: 40%;
 	height: 65%;
-	background: url("../content/steve-jobs.jpg");
 	background-size: cover;
 	margin: auto;
 	margin-top: 5%;
-	border: 10px solid #ee7b00;
-	border-radius: 30px;
-	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
 }
 
 .qrcode {
@@ -525,10 +521,19 @@ tr.clickable-row:hover {
     text-align: center;
 }
 
-.omschrijving, .locatie, .tijd, .datum, .type {
+.omschrijving, .locatie, .tijd, .datum, .type, .bedrijf, .avatar {
     height: 0;
     margin: auto;
     text-align: center;
+     
+}
+
+.avatar {
+    position:absolute; 
+}
+
+.bedrijf {
+    font-weight:bolder;
 }
 
 p.omschrijving {

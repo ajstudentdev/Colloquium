@@ -31,17 +31,41 @@
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
-
                   <div style='' class='omschrijvingcontainer'>
                     @foreach($data as $item)
                         <p class='omschrijving'>{{ $item->Omschrijving }}</p>
                     @endforeach
                   </div>
-
 			</div>
 		</div>
+
+
+
+
+        
+            <style>
+
+            .avatar {
+   object-fit: cover;
+   max-width: 100%;
+   height: 100%;
+   border-radius:20px;
+   width: 90%;
+   	border: 10px solid #ee7b00;
+	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+            }
+
+            </style>
+
+
+
 		<div class="Avatar">
-			<div class="avatar-img"></div>
+			<div class="avatar-img">
+                    @foreach($data as $item)
+                        <img class="avatar" src="{{ $item->Foto_Spreker }}">
+                    @endforeach
+
+            </div>
 			<div class="spreker-naam"> </div>
 		</div>
 		<div class="Metadata">
@@ -116,12 +140,12 @@
 		</div>
 		<div class="Logo-company">
 			<div class="logo-company-container">
-				<img class="logo-company-img" src="content/sony.jpg"> <!--  asset($data->Logo_bedrijf) -->
+				<img class="logo-company-img" src="content/sony.jpg">   
 				</div>
 				<div class="naam-company">
-                 <div class="bedrijfsnaamcontainer">
+                        <div class="bedrijfcontainer">
                             @foreach($data as $item)
-                                <div class="bedrijfsnaam">
+                                <div class="bedrijf">
                                 {{ $item->Bedrijfsnaam }}
                                 </div>
                             @endforeach

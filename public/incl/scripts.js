@@ -18,12 +18,6 @@ function stepTable() {
     i++;
 }
 
-/* verander de bedrijfsnaam */
-$('.bedrijfsnaamcontainer .bedrijfsnaam:gt(0)').hide();
-function stepBedrijfsnaam(){
-    $('.bedrijfsnaam :first-child').fadeOut(1000).next('.bedrijfsnaam').fadeIn(1000)
-    .end().appendTo('.bedrijfsnaamcontainer');
-}
 
 /* verander de tijd */
 $('.tijdcontainer .tijd:gt(0)').hide();
@@ -60,16 +54,31 @@ function stepOmschrijving(){
     .end().appendTo('.omschrijvingcontainer');
 }
 
+/* verander de bedrijf */
+$('.bedrijfcontainer .bedrijf:gt(0)').hide();
+function stepBedrijf(){
+    $('.bedrijfcontainer :first-child').fadeOut(1000).next('.bedrijf').fadeIn(1000)
+    .end().appendTo('.bedrijfcontainer');
+}
+
+/* verander de avatar */
+$('.avatar-img .avatar:gt(0)').hide();
+function stepAvatar(){
+    $('.avatar-img :first-child').fadeOut(1000).next('.avatar').fadeIn(1000)
+    .end().appendTo('.avatar-img');
+}
+
 /* hoofdfunctie, haalt omschrijving op en start andere functies om content te wijzigen */
   $(function(){
     setInterval(function(){
       stepTable();
-      stepBedrijfsnaam();
+      stepBedrijf();
       stepTijd();
       stepDatum();
       stepLocatie();
       stepType();
       stepOmschrijving();
+      stepAvatar();
   }, 7000);
   });
 });
