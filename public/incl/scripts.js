@@ -68,7 +68,22 @@ function stepAvatar(){
     .end().appendTo('.avatar-img');
 }
 
-/* hoofdfunctie, haalt omschrijving op en start andere functies om content te wijzigen */
+
+/* verander de logo-bedrijf */
+$('.logo-bedrijf-img .logo-bedrijf:gt(0)').hide();
+function stepLogobedrijf(){
+    $('.logo-bedrijf-img :first-child').fadeOut(1000).next('.logo-bedrijf').fadeIn(1000)
+    .end().appendTo('.logo-bedrijf-img');
+}
+
+/* verander de title */
+$('.titlecontainer .title:gt(0)').hide();
+function stepTitle(){
+    $('.titlecontainer :first-child').fadeOut(1000).next('.title').fadeIn(1000)
+    .end().appendTo('.titlecontainer');
+}
+
+/* hoofdfunctie, start andere functies om content te wijzigen */
   $(function(){
     setInterval(function(){
       stepTable();
@@ -78,7 +93,9 @@ function stepAvatar(){
       stepLocatie();
       stepType();
       stepOmschrijving();
+      stepTitle();
       stepAvatar();
+      stepLogobedrijf();
   }, 7000);
   });
 });

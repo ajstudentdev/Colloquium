@@ -59,8 +59,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1 {
+h1, .title {
 	font-size: 50px;
+    font-weight:bolder;
 }
 
 
@@ -149,6 +150,15 @@ h1 {
         font-size:25px!important;
     }
 
+    .Metadata {
+    margin-top: 17%;
+    margin-bottom: 12%;
+}
+
+.naam-company {
+    margin-top: 5%;
+}
+
 }
 
 
@@ -166,8 +176,11 @@ h1 {
         margin-top: -19%!important;
         font-size:20px!important;
     }
-}
 
+
+
+
+}
 
 .Title {
 	grid-area: Title;
@@ -214,21 +227,35 @@ html, body, {
 	justify-content: center;
 }
 
-.logo-company-img {
-	max-width: 90%;
-	max-height: 90%;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	text-align: center;
+/*
+.logo-bedrijf {
+    width:100px;
+    margin:auto;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
     filter:         drop-shadow(5px 5px 5px #222); 
 }
+*/
+
+
+.logo-bedrijf-img /* parent */ {
+    text-align: center;
+    position:relative;
+}
+
+.logo-bedrijf /* child */ {
+    margin: 0 auto;
+    max-height:100px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter:         drop-shadow(5px 5px 5px #222);
+    display:block;
+    position:absolute;
+      left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
 
 .metadata-table {
-	margin-top: 4%;
 	font-size: 24px;
 }
 
@@ -282,6 +309,17 @@ html, body, {
 	margin-top: 5%;
 }
 
+
+.avatar {
+    object-fit: cover!important;
+    max-width: 100%!important;
+    height: 100%!important;
+    border-radius:20px;
+    width: 90%;
+   	border: 10px solid #ee7b00;
+	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
+}
+
 .qrcode {
 	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
 }
@@ -323,7 +361,7 @@ html, body, {
 }
 
 .upcoming-container-right {
-	width: 14%;
+	width: 14%;logo-company-container
 	height: 100%;
 	clear: none;
 	float: right;
@@ -336,12 +374,10 @@ tr.clickable-row:hover {
 }
 
 .metadata-table {
-	margin: 0;
 	position: absolute;
 	top: 50%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	margin: auto;
 	font-size: 25px;
 }
 
@@ -521,20 +557,34 @@ tr.clickable-row:hover {
     text-align: center;
 }
 
-.omschrijving, .locatie, .tijd, .datum, .type, .bedrijf, .avatar {
+.omschrijving, .locatie, .tijd, .datum, .type, .bedrijf, .avatar, .title {
     height: 0;
     margin: auto;
     text-align: center;
      
 }
 
+.title {
+    text-align:left;
+}
+
 .avatar {
     position:absolute; 
 }
 
+/*
+.logo-bedrijf-img {
+    width:40%;
+    margin:auto;
+    text-align:center;
+}
+*/
+
+
 .bedrijf {
     font-weight:bolder;
 }
+
 
 p.omschrijving {
     text-align:left!important;

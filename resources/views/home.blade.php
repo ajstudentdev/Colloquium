@@ -27,7 +27,12 @@
 	<div class="mask"></div>
 	<div class="container">
 		<div class="Title">
-			<h1></h1> 
+
+            <div class="titlecontainer">
+                @foreach($data as $item)
+			        <div class="title">{{ $item->Titel }}</div>
+                @endforeach
+            </div>
 		</div>
 		<div class="Description">
 			<div class="omschrijving-lezing">
@@ -38,27 +43,6 @@
                   </div>
 			</div>
 		</div>
-
-
-
-
-        
-            <style>
-
-            .avatar {
-   object-fit: cover;
-   max-width: 100%;
-   height: 100%;
-   border-radius:20px;
-   width: 90%;
-   	border: 10px solid #ee7b00;
-	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
-            }
-
-            </style>
-
-
-
 		<div class="Avatar">
 			<div class="avatar-img">
                     @foreach($data as $item)
@@ -139,9 +123,16 @@
             </table>
 		</div>
 		<div class="Logo-company">
-			<div class="logo-company-container">
-				<img class="logo-company-img" src="content/sony.jpg">   
+			            <div class="logo-company-container">
+			                <div class="logo-bedrijf-img">
+                                    @foreach($data as $item)
+                                        <img class="logo-bedrijf" src="{{ $item->Logo_bedrijf }}">
+                                    @endforeach
+
+                            </div>
+
 				</div>
+
 				<div class="naam-company">
                         <div class="bedrijfcontainer">
                             @foreach($data as $item)
@@ -190,6 +181,7 @@
 					</table>
 				</div>
 				<div class="upcoming-container-right">
+                            <img style = "box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);" src="./content/qrcode_example.gif">
 					</div>
 				</div>
 			</div>
