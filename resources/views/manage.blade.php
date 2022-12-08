@@ -72,7 +72,7 @@
 
             <button class="open-add-screen">Voeg een sessie toe</button>
 
-            			<table style="margin-top:50px" class="upcoming-table">
+					<table class="upcoming-table">
 						<thead>
 							<tr>
 								<th class="hidemobile">Type</th>
@@ -82,48 +82,69 @@
 								<th>Starttijd</th>
 								<th class="hidemobile">Duur</th>
 								<th>Locatie</th>
+                                <th>Acties</th>
 							</tr>
 						</thead>
-						<tbody id="basic-modal">
-							<tr class="clickable-row basic2" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
+
+						<tbody id="basic-modal" class="sessions">
+                        <?php $rownumber=0; ?>
+
+                          @foreach($data as $item)
+
+                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
+								<td class="hidemobile">{{ $item->Colloquium }}</td>
+								<td>{{ $item->Naam }}</td>
+								<td>{{ $item->Titel }}</td>
+                                  
+								<td class="hidemobile">{{date('d-m-Y', strtotime($item->Datum))}}</td>
+								<td>
+                                {{date('H:i', strtotime($item->Start_tijd))}}</td>
+								<td class="hidemobile">{{ $item->Duur }}</td>
+								<td>{{ $item->Locatie }}</td>
+                                <td>
+                                    <button class="button edit"></button>
+                                    <button class="button watch"></button>
+                                    <button class="button delete"></button>
+                                </td>
 							</tr>
-							<tr class="clickable-row basic3" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
-							<tr class="clickable-row basic4" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
-							<tr class="clickable-row basic5" data-href='#'>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-								<td class="hidemobile">inhoud</td>
-								<td>inhoud</td>
-							</tr>
+
+                        @endforeach
+
 						</tbody>
 					</table>
 
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width:30px;
+  height:30px;
+  background-position:center;
+  background-size:20px 20px;
+  background-repeat: no-repeat;
+  box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
+}
+.edit, edit:hover{
+    background-color: #4CAF50;
+    background-image: url(./img/edit.png);
+} 
+.watch {
+    background-color: #008CBA;
+    background-image: url(./img/open.png);
+} 
+.delete {
+    background-color: #f44336;
+    background-image: url(./img/bin.png);
+} 
+</style>
 
 
 

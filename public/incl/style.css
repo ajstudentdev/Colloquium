@@ -624,10 +624,6 @@ button {
 	cursor: pointer;
 }
 
-button:hover, button:active, button:focus {
-	background: #43A047;
-}
-
 .loginform .message, .manageform-add .message {
 	margin: 15px 0 0;
 	color: #838383;
@@ -769,4 +765,10 @@ div.manage-page-add-container button {
 
 .manageform-add {
     max-width:600px!important;
+}
+
+
+.manage-page-overview-container .upcoming-table {
+    width:100%!important;
+    margin-top:50px;
 }
