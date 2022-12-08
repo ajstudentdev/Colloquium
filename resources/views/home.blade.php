@@ -6,7 +6,7 @@
         <script src="{{asset('incl/jquery.js')}}"></script>
         <title>Laravel</title>
     </head>
-    <body class="antialiased">
+    <body class="antialiased home">
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 	<div class="hamburger-menu">
 		<div class="hamburger"></div>

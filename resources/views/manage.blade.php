@@ -102,9 +102,9 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
-                                    <button class="button edit"></button>
-                                    <button class="button watch"></button>
-                                    <button class="button delete"></button>
+                                    <button class="button edit" title="Aanpassen"></button>
+                                    <button class="button watch" title="Bekijken"></button>
+                                    <button class="button delete" title="Verwijderen"></button>
                                 </td>
 							</tr>
 

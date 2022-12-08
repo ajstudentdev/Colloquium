@@ -367,7 +367,7 @@ html, body, {
 	float: right;
 }
 
-tr.clickable-row:hover {
+.home tr.clickable-row:hover {
 	background-color: lightyellow!important;
 	font-weight: bolder;
 	cursor: pointer;
