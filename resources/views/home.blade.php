@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="{{asset('incl/jquery.js')}}"></script>
-        <title>Laravel</title>
+        <title>Colloquium</title>
     </head>
     <body class="antialiased home">
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
@@ -162,7 +162,7 @@
                         <?php $rownumber=0; ?>
 
                           @foreach($data as $item)
-
+                           @if(!$item->Is_Gearchiveerd)
                            <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
 								<td>{{ $item->Naam }}</td>
@@ -174,7 +174,7 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
 							</tr>
-
+                            @endif
                         @endforeach
 
 						</tbody>

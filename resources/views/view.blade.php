@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-    
+    <!--
 
 <script src="{{asset('incl/jquery.js')}}"></script>
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
@@ -105,8 +105,8 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
-                                     <a href="{{ route('wijzigsessie', $item->Lezing_ID) }}"><button class="button edit" title="Bewerken"></button></a>
-                                      <a href="{{ route('bekijksessie', $item->Lezing_ID) }}"><button class="button watch" title="Bekijken"></button></a>
+                                    <button class="button edit" title="Aanpassen"></button>
+                                    <button class="button watch" title="Bekijken"></button>
                                     <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button delete" title="Archiveren"></button></a>
                                 </td>
 							</tr>
@@ -254,9 +254,10 @@
 		</div>
 
 	</div>
-
+    -->
   	<script src="{{asset('incl/scripts.js')}}"></script>
 
 
     </body>
+
 </html>
