@@ -68,11 +68,11 @@
 
         <div style= "width: 80%;" class="manage-page-overview">
 
-             <p style="color:#000;text-shadow: 2px 2px 8px #b3b3b3!important;">Klik op een sessie om de sessie aan te passen. Sessies vanuit het verleden worden niet meer weergegeven op de hoofdpagina.</p>
+             <p>Klik op een sessie om de sessie aan te passen. Sessies vanuit het verleden worden niet meer weergegeven op de hoofdpagina.</p>
 
             <button class="open-add-screen">Voeg een sessie toe</button>
 
-            <h1 style="text-align:left;color:black">Sessies</h1>
+            <h1 style="text-align:left">Sessies</h1>
             <!-- Eerste tabel-->
 					<table class="upcoming-table">
 						<thead>
@@ -105,9 +105,9 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
-                                     <a href="{{ route('wijzigsessie', $item->Lezing_ID) }}"><button class="button edit" title="Bewerken"></button></a>
-                                      <a href="{{ route('bekijksessie', $item->Lezing_ID) }}"><button class="button watch" title="Bekijken"></button></a>
-                                    <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button delete" title="Archiveren"></button></a>
+                                     <a href="{{ route('wijzigsessie', $item->Lezing_ID) }}"><button class="button edit" title="Bewerken/Bekijken"></button></a>
+      <!--                                <a href="{{ route('bekijksessie', $item->Lezing_ID) }}"><button class="button publiceer" title="Publiceren"></button></a> -->
+                                    <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button archive" title="Archiveren"></button></a>
                                 </td>
 							</tr>
                             @endif
@@ -117,7 +117,11 @@
 					</table>
                     <br><br>
 
-                     <h1 style="text-align:left;color:black">Gearchiveerde sessies</h1>
+                     <h1 style="text-align:left">Gearchiveerde sessies</h1>
+
+
+                     @if($data->where('Is_Gearchiveerd')->count() > 0)
+
 
                      <!-- Tweede tabel -->
                     	<table class="upcoming-table">
@@ -137,7 +141,11 @@
 						<tbody id="basic-modal" class="sessions">
                         <?php $rownumber=0; ?>
 
-                          @foreach($data as $item)
+
+                         
+
+                            @foreach($data as $item)
+
 
                           @if($item->Is_Gearchiveerd)
                           
@@ -152,15 +160,26 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
-                                <a href="{{ route('dearchiveersessie', $item->Lezing_ID) }}"><button class="button watch" title="Aanpassen"></button></a>
+                                <a href="{{ route('dearchiveersessie', $item->Lezing_ID) }}"><button class="button publiceer" title="Publiceren"></button></a>
                                 </td>
 							</tr>
                           @endif
-                        @endforeach
+
+                       @endforeach
+
+
+                       
 
 						</tbody>
 					</table>
 
+
+                    @else
+
+                    <p>U heeft geen gearchiveerde sessies. Druk op het rode pijltje om sessies te archiveren.</p>
+
+                    @endif
+                    
 <style>
 .button {
   border: none;
@@ -180,16 +199,16 @@
   box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
 }
 .edit, edit:hover{
-    background-color: #4CAF50;
+    background-color: #6a6dcd;
     background-image: url(./img/edit.png);
 } 
-.watch {
-    background-color: #008CBA;
-    background-image: url(./img/open.png);
+.publiceer {
+    background-color: #4CAF50;
+    background-image: url(./img/up-arrow.png);
 } 
-.delete {
-    background-color: #f44336;
-    background-image: url(./img/bin.png);
+.archive {
+    background-color: #f43636;
+    background-image: url(./img/down-arrow.png);
 } 
 </style>
 

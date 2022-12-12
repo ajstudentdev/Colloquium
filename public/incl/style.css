@@ -613,7 +613,7 @@ button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
-	background: #EE7B00;
+	background: #00c12a;
 	width: 100%;
 	border: 0;
 	padding: 15px;
@@ -771,4 +771,12 @@ div.manage-page-add-container button {
 .manage-page-overview-container .upcoming-table {
     width:100%!important;
     margin-top:50px;
+}
+
+.manage-page-overview {
+    background:rgba(0, 0, 0, 0.4);
+}
+
+th {
+    text-align:center!important;
 }
