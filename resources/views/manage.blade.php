@@ -53,7 +53,7 @@
         $('.open-add-screen, .open-overview-screen').on('click',
             function()
             {
-                $('.manage-page-add-container, .manage-page-overview-container').toggle()
+                $('.manage-page-add-container, .manage-page-overview-container').slideToggle()
             }
         );
     });
@@ -64,15 +64,18 @@
 
 <div class="manage-page-overview-container">
 
-    <h2 style="text-align:center;">Mijn sessies</h2>
+    <h1 style="text-align:center;">Sessies beheren</h1>
 
         <div style= "width: 80%;" class="manage-page-overview">
 
-             <p>Klik op een sessie om de sessie aan te passen. Sessies vanuit het verleden worden niet meer weergegeven op de hoofdpagina.</p>
-
             <button class="open-add-screen">Voeg een sessie toe</button>
 
-            <h1 style="text-align:left">Sessies</h1>
+            <h2 style="text-align:left">Actieve sessies</h2>
+
+
+            @if($data->where('Is_Gearchiveerd','0')->count() > 0)
+
+
             <!-- Eerste tabel-->
 					<table class="upcoming-table">
 						<thead>
@@ -110,14 +113,26 @@
                                     <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button archive" title="Archiveren"></button></a>
                                 </td>
 							</tr>
+
+
                             @endif
                         @endforeach
 
 						</tbody>
 					</table>
+
+
+                    
+                    @else
+
+                    <p style="text-align:left">U heeft geen actieve sessies.</p>
+
+                    @endif
+
+
                     <br><br>
 
-                     <h1 style="text-align:left">Gearchiveerde sessies</h1>
+                     <h2 style="text-align:left">Gearchiveerde sessies</h2>
 
 
                      @if($data->where('Is_Gearchiveerd')->count() > 0)
@@ -177,7 +192,7 @@
 
                     @else
 
-                    <p>U heeft geen gearchiveerde sessies. Druk op het rode pijltje om sessies te archiveren.</p>
+                    <p style="text-align:left">U heeft geen gearchiveerde sessies. Druk op het rode pijltje om sessies te archiveren.</p>
 
                     @endif
                     
@@ -241,22 +256,22 @@
                 <h3>Titel</h3>
                 <p>De titel mag maximaal 40 karakters zijn </p>
                 <input id='titlebox' type="textbox" placeholder="titel"/>
-                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>.
+                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>
 
                 <h3>Omschrijving</h3>
                 <p>De omschrijving mag maximaal 400 karakters zijn </p>
             	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>.
+                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>
      
                 <h3>Spreker naam</h3>
                 <p>De spreker mag maximaal 40 karakters zijn </p>
                 <input id='sprekerbox' type="textbox" placeholder="spreker naam"/>
-                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>.
+                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>
 
                 <h3>Locatie en/of ruimte</h3>
                 <p>De locatie mag maximaal 40 karakters zijn </p>
                 <input id='locatiebox' type="locatie" placeholder="locatie"/>
-                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>.
+                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>
 
                 <h3>Datum</h3>
 				<input type="date" placeholder="datum"/>
