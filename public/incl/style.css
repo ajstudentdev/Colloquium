@@ -540,7 +540,6 @@ html, body, {
 .loginform, .manageform-add, .manage-page-overview {
 	position: relative;
 	z-index: 1;
-	background: #FFFFFF;
 	margin: 0 auto 100px;
 	padding: 45px;
 	text-align: center;
@@ -750,8 +749,7 @@ div.manage-page-add-container > div > form > textarea {
 }
 
 div.manage-page-add-container > div {
-    color:#000;
-        text-shadow: 2px 2px 8px #b3b3b3!important;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 div.manage-page-add-container > h2 {

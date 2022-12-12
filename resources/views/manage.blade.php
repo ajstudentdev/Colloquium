@@ -160,6 +160,7 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
+                                <a href="{{ route('wijzigsessie', $item->Lezing_ID) }}"><button class="button edit" title="Bewerken/Bekijken"></button></a>
                                 <a href="{{ route('dearchiveersessie', $item->Lezing_ID) }}"><button class="button publiceer" title="Publiceren"></button></a>
                                 </td>
 							</tr>
