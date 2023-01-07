@@ -119,4 +119,11 @@ class SessionController extends BaseController
         //return $gelukt;
     }
 
+    public function read($lezingid)
+    {
+        $lezing = DB::table('lezing')
+              ->where('Lezing_ID', $lezingid)->get();
+
+        return view('read', compact('lezing'));
+    }
 }

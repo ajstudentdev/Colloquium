@@ -38,7 +38,7 @@
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
             <li class="navbar--item">
-				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
 			</li>
 		</ul>
 	</navbar>
@@ -64,7 +64,7 @@
 
 <div class="manage-page-overview-container">
 
-    <h2 style="text-align:center;">Mijn sessies</h2>
+    <h2 style="text-align:center;">MIJN LEZINGEN</h2>
 
         <div style= "width: 80%;" class="manage-page-overview">
 
@@ -257,7 +257,11 @@
     -->
   	<script src="{{asset('incl/scripts.js')}}"></script>
 
+      <style>
+      li.navbar--item
+      {width: 130px!important;}
 
+      </style>
     </body>
 
 </html>

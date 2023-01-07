@@ -38,7 +38,7 @@
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
             <li class="navbar--item">
-				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
 			</li>
 		</ul>
 	</navbar>
@@ -64,13 +64,13 @@
 
 <div class="manage-page-overview-container">
 
-    <h1 style="text-align:center;">Sessies beheren</h1>
+    <h1 style="text-align:center;">Lezingen beheren</h1>
 
         <div style= "width: 80%;" class="manage-page-overview">
 
-            <button class="open-add-screen" id="btnAddSession">Voeg een sessie toe</button>
+            <button class="open-add-screen" id="btnAddSession">Voeg een lezing toe</button>
 
-            <h2 style="text-align:left">Actieve sessies</h2>
+            <h2 style="text-align:left">Actieve lezingen</h2>
 
 
             @if($data->where('Is_Gearchiveerd','0')->count() > 0)
@@ -125,14 +125,14 @@
                     
                     @else
 
-                    <p style="text-align:left">U heeft geen actieve sessies.</p>
+                    <p style="text-align:left">U heeft geen actieve lezingen.</p>
 
                     @endif
 
 
                     <br><br>
 
-                     <h2 style="text-align:left">Gearchiveerde sessies</h2>
+                     <h2 style="text-align:left">Gearchiveerde lezingen</h2>
 
 
                      @if($data->where('Is_Gearchiveerd')->count() > 0)
@@ -192,7 +192,7 @@
 
                     @else
 
-                    <p style="text-align:left">U heeft geen gearchiveerde sessies. Druk op het rode pijltje om sessies te archiveren.</p>
+                    <p style="text-align:left">U heeft geen gearchiveerde lezingen. Druk op het rode pijltje om lezingen te archiveren.</p>
 
                     @endif
                     
@@ -315,6 +315,10 @@ $("#btnAddSession").click(function(){
 //btnSave
       
       </script>
+      <style>
+      li.navbar--item
+      {width: 130px!important;}
 
+      </style>
     </body>
 </html>

@@ -38,35 +38,46 @@
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
             <li class="navbar--item">
-				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
 			</li>
 		</ul>
 	</navbar>
 	<div class="mask"></div>
 	<div class="login-page">
 		<div class="loginform">
-			<form class="register-form">
-				<input type="text" placeholder="name"/>
-				<input type="password" placeholder="password"/>
-				<input type="text" placeholder="email address"/>
+			<form class="register-form" action="{{ route('registerapp')}}" method="POST" enctype="multipart/form-data">
+            @csrf <!-- {{ csrf_field() }} -->
+				<input type="text" placeholder="name" name="username"/>
+				<input type="password" placeholder="password" name="password"/>
+				<input type="text" placeholder="email address" name="email"/>
 				<button>create</button>
-				<p class="message">Al geregistreerd?
-					<a href="#">Log hier in</a>
+				<p class="message" style="color:white">Al geregistreerd?
+					<a href="" style="color:white">Log hier in</a>
 				</p>
 			</form>
-			<form class="login-form">
-				<input type="text" placeholder="username"/>
-				<input type="password" placeholder="password"/>
+			<form class="login-form" action="{{ route('loginapp')}}" method="POST" enctype="multipart/form-data">
+            @csrf <!-- {{ csrf_field() }} -->
+				<input type="text" placeholder="username" name="username"/>
+				<input type="password" placeholder="password" name="password"/>
 				<button>login</button>
-				<p class="message">Geen account?
-					<a href="#">maak je account aan</a>
+				<p class="message" style="color:white">Geen account?
+					<a href="#" style="color:white">maak je account aan</a>
 				</p>
+                <hr style="border-top:1px solid green">
+                <p>
+                <a href="#" style="color:white">Wachtwoord vergeten?</a>
+                </p>
+
 			</form>
 		</div>
 	</div>
 
   	<script src="{{asset('incl/scripts.js')}}"></script>
+      <style>
+      li.navbar--item
+      {width: 130px!important;}
 
+      </style>
 
     </body>
 </html>

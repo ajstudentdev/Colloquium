@@ -20,7 +20,7 @@
 				<a href="{{ url('login') }}">INLOGGEN</a>
 			</li>
             <li class="navbar--item">
-				<a href="{{ url('manage') }}">MIJN SESSIES</a>
+				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
 			</li>
 		</ul>
 	</navbar>
@@ -163,7 +163,7 @@
 
                           @foreach($data as $item)
                            @if(!$item->Is_Gearchiveerd)
-                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
+                           <tr class="clickable-row basic1" id="row{{++$rownumber}}"  data-href="{{ route('readsessie', $item->Lezing_ID) }}">
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
 								<td>{{ $item->Naam }}</td>
 								<td>{{ $item->Titel }}</td>
@@ -185,29 +185,20 @@
 					</div>
 				</div>
 			</div>
-			<div id="basic-modal-content1">
+			<!--<div id="basic-modal-content1">
+
 				<h3>titel1</h3>
 				<p>inhoud van de modalbox1</p>
-			</div>
-			<div id="basic-modal-content2">
-				<h3>titel2</h3>
-				<p>inhoud van de modalbox2</p>
-			</div>
-			<div id="basic-modal-content3">
-				<h3>titel3</h3>
-				<p>inhoud van de modalbox3</p>
-			</div>
-			<div id="basic-modal-content4">
-				<h3>titel4</h3>
-				<p>inhoud van de modalbox4</p>
-			</div>
-			<div id="basic-modal-content5">
-				<h3>titel5</h3>
-				<p>inhoud van de modalbox5</p>
-			</div>
+			</div>-->
 		</div>
 
         <script src="{{asset('incl/scripts.js')}}"></script>
         <script src="{{asset('incl/jquery.simplemodal.js')}}"></script>
+
+        <style>
+      li.navbar--item
+      {width: 130px!important;}
+
+      </style>
     </body>
 </html>

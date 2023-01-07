@@ -160,34 +160,30 @@ else {
 
 /* ----- modal ------ */
 
-if(window.location.pathname == '/') {
+//if(window.location.pathname == '/') {
 
-    jQuery(function ($) {
-      $('#basic-modal .basic1').click(function (e) {		$('#basic-modal-content1').modal();
-          return false;
-      });
-    });
-    jQuery(function ($) {
-      $('#basic-modal .basic2').click(function (e) {		$('#basic-modal-content2').modal();
-        return false;
-      });
-    });
-    jQuery(function ($) {
-      $('#basic-modal .basic3').click(function (e) {		$('#basic-modal-content3').modal();
-        return false;
-      });
-    });
-    jQuery(function ($) {
-      $('#basic-modal .basic4').click(function (e) {		$('#basic-modal-content4').modal();
-        return false;
-      });
-    });
-    jQuery(function ($) {
-      $('#basic-modal .basic5').click(function (e) {		$('#basic-modal-content5').modal();
-        return false;
-      });
-    });
- }
+   // jQuery(function ($) {
+    //  $('#basic-modal .basic1').click(function (e) {
+     // var id =  e.currentTarget.dataset.id;
+
+
+
+      //console.log(id);
+      //  let url = "{{ route('readsessie', ':id') }}";
+
+        
+
+       // url = url.replace(':id', id);
+
+      //  console.log(url);
+       // document.location.href=url;
+
+      //$('#basic-modal-content1').modal();
+
+    //      return false;
+   //   });
+  //  });
+// }
 
 
 /* ------- FORM LIMIT TEXT  ---------- */

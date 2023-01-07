@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\ManageController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\PasswordforgotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,6 @@ Route::get('/login', [HomeController::class, 'login']);
 //Route for the manage page
 Route::get('/manage', [HomeController::class, 'manage']);
 
-//Route for the homepage
-Route::get('/admin', [ManageController::class, 'index']);
 
 
 //Route for the sessie
@@ -41,3 +41,12 @@ Route::get('/type', [TypeController::class, 'index']);
 
 //Route for the save sessie
 Route::post('/save', [SessionController::class, 'save'])->name('savesessie');
+
+//Route for the read sessie
+Route::get('/session/read/{lezingid}', [SessionController::class, 'read'])->name('readsessie');
+
+//Route for the login
+Route::post('/loginapp', [LoginController::class, 'login'])->name('loginapp');
+
+//Route for the register
+Route::post('/registerapp', [RegisterController::class, 'register'])->name('registerapp');
