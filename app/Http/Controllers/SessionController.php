@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController; 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
+
 use DB;
 
 class SessionController extends BaseController
@@ -72,5 +75,48 @@ class SessionController extends BaseController
         }
     }
 
+    public function save(Request $request)
+    {
+        $gelukt = false;
+
+        //Controleren of alle velden aanwezig zijn
+
+
+
+        $type = strval($request->get('type'));
+        $titel = strval($request->get('titel'));
+        $omschrijving = strval($request->get('omschrijving'));
+        $sprekernaam = strval($request->get('sprekernaam'));
+        $locatie = strval($request->get('locatie'));
+        $datum = $request->get('datum');
+        $starttijd = $request->get('starttijd');
+        $duur = intval($request->get('duur'));
+
+
+
+        //Als de sprekernaam bestaat dan niet opslaan!! bestaande gebruiken
+
+        //Sla sprekernaam op
+
+        DB::table('spreker')->insert(
+        ['Naam' => $sprekernaam, 'Foto_Spreker' => '']);
+
+        //Get Spreker_ID
+        $id = DB::table('spreker')->where(['Naam' => $sprekernaam])->get()->value('Spreker_ID');
+
+        //Sla de lezing op
+        DB::table('lezing')->insert(
+        ['Spreker_ID' => $id, 'Datum' => $datum, 'Duur' => $duur, 'Locatie' => $locatie,
+        'Omschrijving' => $omschrijving, 'Start_tijd' => $starttijd, 'Titel' => $titel,
+        'Colloquium' => $type, 'Is_Gearchiveerd' => 0]
+        );
+
+        //Sla de lezing op
+        
+
+        $gelukt = true;
+
+        //return $gelukt;
+    }
 
 }

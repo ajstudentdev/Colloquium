@@ -68,7 +68,7 @@
 
         <div style= "width: 80%;" class="manage-page-overview">
 
-            <button class="open-add-screen">Voeg een sessie toe</button>
+            <button class="open-add-screen" id="btnAddSession">Voeg een sessie toe</button>
 
             <h2 style="text-align:left">Actieve sessies</h2>
 
@@ -243,47 +243,45 @@
 		<div class="manageform-add">
 
         <button class="open-overview-screen">< Terug naar overzicht</button>
-			<form style="margin-top:50px" class="manage-form-add">
+			<form style="margin-top:50px" class="manage-form-add" action="{{ route('savesessie') }}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
 
                 <h3>Type</h3>
-                <select id="cars" name="cars">
-                  <option value="Type 1">Type 1</option>
-                  <option value="Type 2">Type 2</option>
-                  <option value="Type 3">Type 3</option>
-                  <option value="Type 4">Type 4</option>
+                <select id="cars" name="type">
+                 <!-- <option value="Type 4">Type 4</option> -->
                 </select>
 
                 <h3>Titel</h3>
                 <p>De titel mag maximaal 40 karakters zijn </p>
-                <input id='titlebox' type="textbox" placeholder="titel"/>
+                <input id='titlebox' type="textbox" name="titel" placeholder="titel"/>
                 <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>
 
                 <h3>Omschrijving</h3>
                 <p>De omschrijving mag maximaal 400 karakters zijn </p>
-            	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
+            	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/></textarea>
                 <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>
      
                 <h3>Spreker naam</h3>
                 <p>De spreker mag maximaal 40 karakters zijn </p>
-                <input id='sprekerbox' type="textbox" placeholder="spreker naam"/>
+                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
                  <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>
 
                 <h3>Locatie en/of ruimte</h3>
                 <p>De locatie mag maximaal 40 karakters zijn </p>
-                <input id='locatiebox' type="locatie" placeholder="locatie"/>
+                <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie"/>
                 <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>
 
                 <h3>Datum</h3>
-				<input type="date" placeholder="datum"/>
+				<input type="date" name="datum" placeholder="datum" value="<?php echo date('Y-m-d'); ?>"/>
 
                 <h3>Starttijd van sessie</h3>
-                <input type="time" placeholder="starttijd"/>
+                <input type="time" name="starttijd" placeholder="starttijd"/>
 
                 <h3>Duur in minuten</h3>
                 <p>De duur mag maximaal 1200 minuten zijn </p>
-                <input type="number" max="1200" placeholder="duur"/>
+                <input type="number" max="1200" name="duur" placeholder="duur"/>
 
-				<button>opslaan</button>
+				<button id="btnSave">opslaan</button>
 
 			 </form>
 		</div>
@@ -292,6 +290,31 @@
 
   	<script src="{{asset('incl/scripts.js')}}"></script>
 
+      <script>
+     function addOption(name) {
+        optText = name;
+        optValue = name;
+        $('#cars').append(new Option(optText, optValue));
+      }
+
+$("#btnAddSession").click(function(){
+    $('#cars').empty();
+
+    console.log("The btn was clicked.");
+  $.get("http://localhost:8000/type", function(data, status){
+      //console.log(data);
+       for(var i =0;i < data.length;i++)
+{
+  var item = data[i];
+  //console.log(item.colloquium);
+  addOption(item.type);
+}
+  });
+});
+
+//btnSave
+      
+      </script>
 
     </body>
 </html>

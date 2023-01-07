@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ManageController;
+use App\Http\Controllers\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,8 @@ Route::get('/desession/{id}', [SessionController::class, 'dearchiveer'])->name('
 Route::get('/session/view/{id}', [SessionController::class, 'viewsession'])->name('bekijksessie');
 Route::get('/session/edit/{id}', [SessionController::class, 'editsession'])->name('wijzigsessie');
 
+//Route for the types
+Route::get('/type', [TypeController::class, 'index']);
 
+//Route for the save sessie
+Route::post('/save', [SessionController::class, 'save'])->name('savesessie');

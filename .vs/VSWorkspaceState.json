@@ -1,14 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Controllers",
-    "\\app\\Models",
-    "\\resources",
-    "\\resources\\views",
-    "\\routes"
+    ""
   ],
-  "SelectedNode": "\\app\\Http\\Controllers\\ManageController.php",
+  "SelectedNode": "\\C:\\Users\\Colloquium\\Source\\Repos\\Colloquium",
   "PreviewInSolutionExplorer": false
 }
