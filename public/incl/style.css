@@ -532,7 +532,7 @@ html, body, {
 }
 
 .manage-page-add-container, .manage-page-overview-container {
-	width: 80%;
+	width: 100%;
 	padding: 8% 0 0;
 	margin: auto;
 }
@@ -542,7 +542,6 @@ html, body, {
 	z-index: 1;
 	margin: 0 auto 100px;
 	padding: 45px;
-	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -597,7 +596,7 @@ p.omschrijving {
 	background: #f2f2f2;
 	width: 100%;
 	border: 0;
-	margin: 0 0 15px;
+	margin: 0 0 10px;
 	padding: 15px;
 	box-sizing: border-box;
 	font-size: 14px;
@@ -762,7 +761,7 @@ div.manage-page-add-container button {
 }
 
 .manageform-add {
-    max-width:600px!important;
+    max-width:1440px!important;
 }
 
 
@@ -778,3 +777,81 @@ div.manage-page-add-container button {
 th {
     text-align:center!important;
 }
+
+
+.aantal {
+    text-align:center;
+}
+
+
+input[type=file]
+{ background:none!important;}
+
+
+.angry-grid {
+   display: grid; 
+
+   grid-template-rows: 1fr;
+   grid-template-columns: 1fr 1fr;
+   
+   gap: 0px;
+   height: 100%;
+
+
+   
+}
+
+#item-0 {
+
+   grid-row-start: 1;
+   grid-column-start: 1;
+
+   grid-row-end: 2;
+   grid-column-end: 2;
+
+   padding-right:70px;
+   
+}
+#item-1 {
+
+   grid-row-start: 1;
+   grid-column-start: 2;
+
+   grid-row-end: 2;
+   grid-column-end: 3;
+
+   padding-left:70px;
+
+   border-left: 1px solid rgb(255 255 255 / 52%);
+   
+}
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width:30px;
+  height:30px;
+  background-position:center;
+  background-size:20px 20px;
+  background-repeat: no-repeat;
+  box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
+}
+.edit, edit:hover{
+    background-color: #6a6dcd;
+    background-image: url(../img/edit.png);
+} 
+.publiceer {
+    background-color: #4CAF50;
+    background-image: url(../img/up-arrow.png);
+} 
+.archive {
+    background-color: #f43636;
+    background-image: url(../img/down-arrow.png);

@@ -196,39 +196,6 @@
 
                     @endif
                     
-<style>
-.button {
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width:30px;
-  height:30px;
-  background-position:center;
-  background-size:20px 20px;
-  background-repeat: no-repeat;
-  box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
-}
-.edit, edit:hover{
-    background-color: #6a6dcd;
-    background-image: url(./img/edit.png);
-} 
-.publiceer {
-    background-color: #4CAF50;
-    background-image: url(./img/up-arrow.png);
-} 
-.archive {
-    background-color: #f43636;
-    background-image: url(./img/down-arrow.png);
-} 
-</style>
-
-
 
         </div>
 
@@ -239,51 +206,97 @@
 
 
 	<div class="manage-page-add-container" style="display:none">
-            <h2>Sessie toevoegen</h2>
+            <h2>Lezing toevoegen</h2>
 		<div class="manageform-add">
 
-        <button class="open-overview-screen">< Terug naar overzicht</button>
-			<form style="margin-top:50px" class="manage-form-add" action="{{ route('savesessie') }}" method="POST" enctype="multipart/form-data">
-            {{ csrf_field() }}
+
+        <center>
+        <button class="open-overview-screen" style="max-width:400px;">< Terug naar overzicht</button>
+        </center>
+
+
+<form style="margin-top:50px" class="manage-form-add" action="{{ route('savesessie') }}" method="POST" enctype="multipart/form-data">
+{{ csrf_field() }}
+
+<div class="angry-grid">
+
+  <div id="item-0">
+
 
                 <h3>Type</h3>
                 <select id="cars" name="type">
-                 <!-- <option value="Type 4">Type 4</option> -->
                 </select>
 
-                <h3>Titel</h3>
-                <p>De titel mag maximaal 40 karakters zijn </p>
+                 <h3>Titel</h3>
                 <input id='titlebox' type="textbox" name="titel" placeholder="titel"/>
-                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>
+                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
 
                 <h3>Omschrijving</h3>
-                <p>De omschrijving mag maximaal 400 karakters zijn </p>
             	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>
-     
-                <h3>Spreker naam</h3>
-                <p>De spreker mag maximaal 40 karakters zijn </p>
-                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
-                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>
+                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
 
-                <h3>Locatie en/of ruimte</h3>
-                <p>De locatie mag maximaal 40 karakters zijn </p>
+
+                <h3>Naam spreker</h3>
+                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
+                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
+
+                <h3>Foto spreker</h3>
+                <input type="file" accept="image/*" onchange="loadFile(event)">
+
+  </div>
+  <div id="item-1">
+
+                 <h3>Locatie en/of ruimte</h3>
                 <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie"/>
-                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>
+                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
+
 
                 <h3>Datum</h3>
 				<input type="date" name="datum" placeholder="datum" value="<?php echo date('Y-m-d'); ?>"/>
 
-                <h3>Starttijd van sessie</h3>
+                <h3>Starttijd</h3>
                 <input type="time" name="starttijd" placeholder="starttijd"/>
 
-                <h3>Duur in minuten</h3>
-                <p>De duur mag maximaal 1200 minuten zijn </p>
+                <h3>Tijdsduur (min.)</h3>
                 <input type="number" max="1200" name="duur" placeholder="duur"/>
 
-				<button id="btnSave">opslaan</button>
+                <h3>Bedrijfslogo</h3>
+                <input type="file" accept="image/*" onchange="loadFile(event)">
 
-			 </form>
+                <h3>Bedrijfsnaam</h3>
+                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaamnaam" placeholder="bedrijfsnaam"/>
+                 <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
+
+
+  </div>
+
+</div>
+
+<center>
+  <button id="btnSave" style="max-width:400px; margin-top: 50px;">opslaan</button>
+</center>
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</div>
 
 	</div>

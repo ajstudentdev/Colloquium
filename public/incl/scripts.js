@@ -271,4 +271,26 @@ if(window.location.pathname == '/manage') {
     }
 
 
+
+    /* weergeef aantal karakters textbox bedrijfsnaam */
+    $('#bedrijfsnaambox').keyup(updateCountbedrijfsnaambox);
+    $('#bedrijfsnaambox').keydown(updateCountbedrijfsnaambox);
+
+    /*limiteer invoer bedrijfsnaam */
+
+    let namebedrijfsnaambox = document.getElementById('bedrijfsnaambox');
+
+    namebedrijfsnaambox.addEventListener('keyup', () => {
+		    if (namebedrijfsnaambox.value.length > 10) {
+    		    namebedrijfsnaambox.value = namebedrijfsnaambox.value.slice(0, 39);
+        }
+    })
+
+    function updateCountbedrijfsnaambox() {
+        var cs = $(this).val().length;
+        $('#characters-bedrijfsnaam').text(cs);
+    }
+
+
+
 }
