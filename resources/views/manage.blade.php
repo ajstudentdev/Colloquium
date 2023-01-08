@@ -68,7 +68,9 @@
 
         <div style= "width: 80%;" class="manage-page-overview">
 
+            <center>
             <button class="open-add-screen" id="btnAddSession">Voeg een lezing toe</button>
+            </center>
 
             <h2 style="text-align:left">Actieve lezingen</h2>
 
