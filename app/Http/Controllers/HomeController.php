@@ -26,7 +26,7 @@ class HomeController extends BaseController
         $data = DB::table('spreker')
       //  ->select('users.id','users.name','profiles.photo')
         ->join('lezing','spreker.Spreker_ID','=','lezing.Spreker_ID')
-       // ->where(['something' => 'something', 'otherThing' => 'otherThing'])
+       ->where(['Is_Gearchiveerd' => 0])
         ->get();
 
         //Return the view
