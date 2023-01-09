@@ -70,8 +70,9 @@ class SessionController extends BaseController
             $affected = DB::table('lezing')
               ->where('Lezing_ID', $id)->get();
               //->update(['Is_Gearchiveerd' => 0]);
-              dd($affected);
-            //return redirect()->to('/view'); 
+              //dd($affected);
+            //return redirect()->to('/view');
+            return view('edit');
         }
     }
 
