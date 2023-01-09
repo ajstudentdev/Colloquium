@@ -45,14 +45,25 @@
 	<div class="mask"></div>
 	<div class="login-page">
 		<div class="loginform">
+
+
+        	<form class="forgotpass-form" action="{{ route('registerapp')}}" method="POST" enctype="multipart/form-data">
+            @csrf <!-- {{ csrf_field() }} -->
+				<input type="text" placeholder="email address" name="email"/>
+				<button>create</button>
+				<p class="message login" style="color:white">Al geregistreerd?
+					<a href="#" class="loginlink" style="color:white">Log hier in</a>
+				</p>
+			</form>
+
 			<form class="register-form" action="{{ route('registerapp')}}" method="POST" enctype="multipart/form-data">
             @csrf <!-- {{ csrf_field() }} -->
 				<input type="text" placeholder="name" name="username"/>
 				<input type="password" placeholder="password" name="password"/>
 				<input type="text" placeholder="email address" name="email"/>
 				<button>create</button>
-				<p class="message" style="color:white">Al geregistreerd?
-					<a href="" style="color:white">Log hier in</a>
+				<p class="message login" style="color:white">Al geregistreerd?
+					<a href="#" class="loginlink" style="color:white">Log hier in</a>
 				</p>
 			</form>
 			<form class="login-form" action="{{ route('loginapp')}}" method="POST" enctype="multipart/form-data">
@@ -60,15 +71,18 @@
 				<input type="text" placeholder="username" name="username"/>
 				<input type="password" placeholder="password" name="password"/>
 				<button>login</button>
-				<p class="message" style="color:white">Geen account?
+				<p class="registerlink" style="color:white">Geen account?
 					<a href="#" style="color:white">maak je account aan</a>
 				</p>
-                <hr style="border-top:1px solid green">
-                <p>
-                <a href="#" style="color:white">Wachtwoord vergeten?</a>
-                </p>
+                <p class="forgotpass" style="color:white">Wachtwoord vergeten?
+					<a href="#" style="color:white">reset</a>
+				</p>
+
 
 			</form>
+
+
+
 		</div>
 	</div>
 

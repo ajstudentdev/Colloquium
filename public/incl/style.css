@@ -660,7 +660,7 @@ button:hover {
 	text-decoration: none;
 }
 
-.loginform .register-form, .manageform-add .register-form {
+.loginform .register-form, .manageform-add .register-form, .forgotpass-form {
 	display: none;
 }
 
@@ -796,7 +796,7 @@ div.manage-page-add-container button {
     margin-top:50px;
 }
 
-.manage-page-overview {
+.manage-page-overview, .loginform {
     background:rgba(0, 0, 0, 0.4);
 }
 

@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\public\\css",
+    "\\public\\incl",
+    "\\resources",
+    "\\resources\\views",
+    "\\routes",
+    "\\storage"
   ],
-  "SelectedNode": "\\C:\\Users\\Colloquium\\Source\\Repos\\Colloquium",
   "PreviewInSolutionExplorer": false
 }

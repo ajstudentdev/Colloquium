@@ -107,8 +107,24 @@ if(window.location.pathname == '/') {
 
  if(window.location.pathname == '/login') {
 
-    $('.message a').click(function(){
-       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    $('.registerlink a').click(function(){
+       $('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+       $('.register-form').animate({height: "toggle", opacity: "toggle"}, "slow");      
+    });
+
+     $('.forgotpass a').click(function(){
+       $('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+       $('.forgotpass-form').animate({height: "toggle", opacity: "toggle"}, "slow");      
+    });
+
+     $('.forgotpass-form .login a').click(function(){
+       $('.forgotpass-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+       $('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow");      
+    });
+
+     $('.register-form .login a').click(function(){
+       $('.register-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+       $('.login-form').animate({height: "toggle", opacity: "toggle"}, "slow");      
     });
 
  }
