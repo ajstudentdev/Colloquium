@@ -99,7 +99,7 @@ class SessionController extends BaseController
         //Sla sprekernaam op
 
         DB::table('spreker')->insert(
-        ['Naam' => $sprekernaam, 'Foto_Spreker' => '']);
+        ['Naam' => $sprekernaam]);
 
         //Get Spreker_ID
         $id = DB::table('spreker')->where(['Naam' => $sprekernaam])->get()->value('Spreker_ID');
@@ -115,6 +115,7 @@ class SessionController extends BaseController
         
 
         $gelukt = true;
+        return redirect('/manage');
 
         //return $gelukt;
     }
