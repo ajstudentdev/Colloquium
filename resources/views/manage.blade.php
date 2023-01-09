@@ -69,6 +69,7 @@
         <div style= "width: 80%;" class="manage-page-overview">
 
             <center>
+            <a href ="/"><button>Homepagina</button></a>
             <button class="open-add-screen" id="btnAddSession">Voeg een lezing toe</button>
             </center>
 

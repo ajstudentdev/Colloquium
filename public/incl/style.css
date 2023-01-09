@@ -545,6 +545,11 @@ html, body, {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+.loginform button {
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
 .point {
   stroke: white;
   stroke-width: 0.5;
@@ -647,13 +652,6 @@ button:hover {
     border-color: #fff;
 }
 
-
-.loginform .message, .manageform-add .message {
-	margin: 15px 0 0;
-	color: #838383;
-	text-shadow: 1px 1px 3px #b7b7b7;
-	font-size: 12px;
-}
 
 .loginform .message a, .manageform-add .message a {
 	color: #EE7B00;
