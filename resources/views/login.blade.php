@@ -51,7 +51,7 @@
             @csrf <!-- {{ csrf_field() }} -->
 				<input type="text" placeholder="email address" name="email"/>
 				<center><button>create</button>
-				<p class="message login" style="color:white">Al geregistreerd?
+				<p class="message login" style="color:white">Terug naar login?
 					<a href="#" class="loginlink" style="color:white">Log hier in</a>
 				</p></center>
 			</form>
