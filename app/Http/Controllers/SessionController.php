@@ -91,7 +91,7 @@ class SessionController extends BaseController
         $datum = $request->get('datum');
         $starttijd = $request->get('starttijd');
         $duur = intval($request->get('duur'));
-
+        $bedrijfsnaam = strval($request->get('bedrijfsnaam'));
 
 
         //Als de sprekernaam bestaat dan niet opslaan!! bestaande gebruiken
@@ -99,7 +99,7 @@ class SessionController extends BaseController
         //Sla sprekernaam op
 
         DB::table('spreker')->insert(
-        ['Naam' => $sprekernaam]);
+        ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam]);
 
         //Get Spreker_ID
         $id = DB::table('spreker')->where(['Naam' => $sprekernaam])->get()->value('Spreker_ID');

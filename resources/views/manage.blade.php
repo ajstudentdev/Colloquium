@@ -267,7 +267,7 @@
                 <input type="file" accept="image/*" onchange="loadFile(event)">
 
                 <h3>Bedrijfsnaam</h3>
-                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaamnaam" placeholder="bedrijfsnaam"/>
+                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam"/>
                  <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
 
 
