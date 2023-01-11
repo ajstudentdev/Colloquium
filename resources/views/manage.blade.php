@@ -244,7 +244,7 @@
                  <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
 
                 <h3>Foto spreker</h3>
-                <input type="file" accept="image/*" onchange="loadFile(event)">
+                <input type="file" accept="image/*" onchange="loadFile(event)" name="fotospreker">
 
   </div>
   <div id="item-1">
@@ -264,7 +264,7 @@
                 <input type="number" max="1200" name="duur" placeholder="duur"/>
 
                 <h3>Bedrijfslogo</h3>
-                <input type="file" accept="image/*" onchange="loadFile(event)">
+                <input type="file" accept="image/*" onchange="loadFile(event)" name="bedrijfslogo">
 
                 <h3>Bedrijfsnaam</h3>
                 <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam"/>
