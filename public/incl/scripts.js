@@ -205,7 +205,7 @@ else {
 /* ------- FORM LIMIT TEXT  ---------- */
 
 
-if(window.location.pathname == '/manage') {
+if(window.location.pathname == '/manage' || '/edit') {
 
 
     /* weergeef aantal karakters textbox omschrijving */

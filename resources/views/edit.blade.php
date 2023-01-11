@@ -21,240 +21,110 @@
         </style>
     </head>
     <body class="antialiased">
-    <!--
-
-<script src="{{asset('incl/jquery.js')}}"></script>
+    <script src="{{asset('incl/jquery.js')}}"></script>
 <link rel="stylesheet" href="{{asset('incl/style.css')}}">
 
-	<div class="hamburger-menu">
-		<div class="hamburger"></div>
-	</div>
-	<navbar class="sliding-navbar">
-		<ul class="navbar--items">
-			<li class="navbar--item">
-				<a href="{{ url('') }}">HOME</a>
-			</li>
-			<li class="navbar--item">
-				<a href="{{ url('login') }}">INLOGGEN</a>
-			</li>
-            <li class="navbar--item">
-				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
-			</li>
-		</ul>
-	</navbar>
-    	<div class="mask"></div>
+    	<div class="manage-page-add-container">
+            <h2>Lezing bewerken</h2>
+		<div class="manageform-add">
 
 
-<script>
-
-    /* ---- wissel de schermen ---- */
-
-   $(window).load(function(){
-        $('.open-add-screen, .open-overview-screen').on('click',
-            function()
-            {
-                $('.manage-page-add-container, .manage-page-overview-container').toggle()
-            }
-        );
-    });
-
-</script>
+        <center>
+        <a href="/manage"><button class="open-overview-screen" style="max-width:400px;">< Terug naar overzicht</button></a>
+        </center>
 
 
+<form style="margin-top:50px" class="manage-form-add" action="{{ route('savesessie') }}" method="POST" enctype="multipart/form-data">
+{{ csrf_field() }}
 
-<div class="manage-page-overview-container">
+<div class="angry-grid">
 
-    <h2 style="text-align:center;">MIJN LEZINGEN</h2>
-
-        <div style= "width: 80%;" class="manage-page-overview">
-
-             <p style="color:#000;text-shadow: 2px 2px 8px #b3b3b3!important;">Klik op een sessie om de sessie aan te passen. Sessies vanuit het verleden worden niet meer weergegeven op de hoofdpagina.</p>
-
-            <button class="open-add-screen">Voeg een sessie toe</button>
-
-            <h1 style="text-align:left;color:black">Sessies</h1>
-            <!-- Eerste tabel-->
-					<table class="upcoming-table">
-						<thead>
-							<tr>
-								<th class="hidemobile">Type</th>
-								<th>Naam spreker</th>
-								<th>Titel</th>
-								<th class="hidemobile">Datum</th>
-								<th>Starttijd</th>
-								<th class="hidemobile">Duur</th>
-								<th>Locatie</th>
-                                <th>Acties</th>
-							</tr>
-						</thead>
-
-						<tbody id="basic-modal" class="sessions">
-                        <?php $rownumber=0; ?>
-
-                          @foreach($data as $item)
-                          @if(!$item->Is_Gearchiveerd)
-                          
-                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
-								<td class="hidemobile">{{ $item->Colloquium }}</td>
-								<td>{{ $item->Naam }}</td>
-								<td>{{ $item->Titel }}</td>
-                                  
-								<td class="hidemobile">{{date('d-m-Y', strtotime($item->Datum))}}</td>
-								<td>
-                                {{date('H:i', strtotime($item->Start_tijd))}}</td>
-								<td class="hidemobile">{{ $item->Duur }}</td>
-								<td>{{ $item->Locatie }}</td>
-                                <td>
-                                    <button class="button edit" title="Aanpassen"></button>
-                                    <button class="button watch" title="Bekijken"></button>
-                                    <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button delete" title="Archiveren"></button></a>
-                                </td>
-							</tr>
-                            @endif
-                        @endforeach
-
-						</tbody>
-					</table>
-                    <br><br>
-
-                     <h1 style="text-align:left;color:black">Gearchiveerde sessies</h1>
-
-                     <!-- Tweede tabel -->
-                    	<table class="upcoming-table">
-						<thead>
-							<tr>
-								<th class="hidemobile">Type</th>
-								<th>Naam spreker</th>
-								<th>Titel</th>
-								<th class="hidemobile">Datum</th>
-								<th>Starttijd</th>
-								<th class="hidemobile">Duur</th>
-								<th>Locatie</th>
-                                <th>Acties</th>
-							</tr>
-						</thead>
-
-						<tbody id="basic-modal" class="sessions">
-                        <?php $rownumber=0; ?>
-
-                          @foreach($data as $item)
-
-                          @if($item->Is_Gearchiveerd)
-                          
-                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href='#'>
-								<td class="hidemobile">{{ $item->Colloquium }}</td>
-								<td>{{ $item->Naam }}</td>
-								<td>{{ $item->Titel }}</td>
-                                  
-								<td class="hidemobile">{{date('d-m-Y', strtotime($item->Datum))}}</td>
-								<td>
-                                {{date('H:i', strtotime($item->Start_tijd))}}</td>
-								<td class="hidemobile">{{ $item->Duur }}</td>
-								<td>{{ $item->Locatie }}</td>
-                                <td>
-                                <a href="{{ route('dearchiveersessie', $item->Lezing_ID) }}"><button class="button watch" title="Aanpassen"></button></a>
-                                </td>
-							</tr>
-                          @endif
-                        @endforeach
-
-						</tbody>
-					</table>
-
-<style>
-.button {
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width:30px;
-  height:30px;
-  background-position:center;
-  background-size:20px 20px;
-  background-repeat: no-repeat;
-  box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
-}
-.edit, edit:hover{
-    background-color: #4CAF50;
-    background-image: url(./img/edit.png);
-} 
-.watch {
-    background-color: #008CBA;
-    background-image: url(./img/open.png);
-} 
-.delete {
-    background-color: #f44336;
-    background-image: url(./img/bin.png);
-} 
-</style>
+  <div id="item-0">
 
 
+                <h3>Type</h3>
+                <select id="cars" name="type">
+                </select>
 
-        </div>
+                 <h3>Titel</h3>
+                <input id='titlebox' type="textbox" name="titel" placeholder="titel"/>
+                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
+
+                <h3>Omschrijving</h3>
+            	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/></textarea>
+                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
+
+
+                <h3>Naam spreker</h3>
+                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
+                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
+
+                <h3>Foto spreker</h3>
+                <input type="file" accept="image/*" onchange="loadFile(event)">
+
+  </div>
+  <div id="item-1">
+
+                 <h3>Locatie en/of ruimte</h3>
+                <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie"/>
+                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
+
+
+                <h3>Datum</h3>
+				<input type="date" name="datum" placeholder="datum" value="<?php echo date('Y-m-d'); ?>"/>
+
+                <h3>Starttijd</h3>
+                <input type="time" name="starttijd" placeholder="starttijd"/>
+
+                <h3>Tijdsduur (min.)</h3>
+                <input type="number" max="1200" name="duur" placeholder="duur"/>
+
+                <h3>Bedrijfslogo</h3>
+                <input type="file" accept="image/*" onchange="loadFile(event)">
+
+                <h3>Bedrijfsnaam</h3>
+                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaamnaam" placeholder="bedrijfsnaam"/>
+                 <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
+
+
+  </div>
 
 </div>
 
+<center>
+  <button id="btnSave" style="max-width:400px; margin-top: 50px;">opslaan</button>
+</center>
+
+  </form>
 
 
 
 
-	<div class="manage-page-add-container" style="display:none">
-            <h2>Sessie toevoegen</h2>
-		<div class="manageform-add">
 
-        <button class="open-overview-screen">< Terug naar overzicht</button>
-			<form style="margin-top:50px" class="manage-form-add">
 
-                <h3>Type</h3>
-                <select id="cars" name="cars">
-                  <option value="Type 1">Type 1</option>
-                  <option value="Type 2">Type 2</option>
-                  <option value="Type 3">Type 3</option>
-                  <option value="Type 4">Type 4</option>
-                </select>
 
-                <h3>Titel</h3>
-                <p>De titel mag maximaal 40 karakters zijn </p>
-                <input id='titlebox' type="textbox" placeholder="titel"/>
-                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt</p>.
 
-                <h3>Omschrijving</h3>
-                <p>De omschrijving mag maximaal 400 karakters zijn </p>
-            	<textarea id='descriptionbox' type="textbox" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt</p>.
-     
-                <h3>Spreker naam</h3>
-                <p>De spreker mag maximaal 40 karakters zijn </p>
-                <input id='sprekerbox' type="textbox" placeholder="spreker naam"/>
-                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt</p>.
 
-                <h3>Locatie en/of ruimte</h3>
-                <p>De locatie mag maximaal 40 karakters zijn </p>
-                <input id='locatiebox' type="locatie" placeholder="locatie"/>
-                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt</p>.
 
-                <h3>Datum</h3>
-				<input type="date" placeholder="datum"/>
 
-                <h3>Starttijd van sessie</h3>
-                <input type="time" placeholder="starttijd"/>
 
-                <h3>Duur in minuten</h3>
-                <p>De duur mag maximaal 1200 minuten zijn </p>
-                <input type="number" max="1200" placeholder="duur"/>
 
-				<button>opslaan</button>
 
-			 </form>
+
+
+
+
+
+
 		</div>
 
 	</div>
-    -->
+
+
+
+
+
+
   	<script src="{{asset('incl/scripts.js')}}"></script>
 
       <style>
