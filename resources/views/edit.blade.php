@@ -34,7 +34,7 @@
         </center>
 
 
-<form style="margin-top:50px" class="manage-form-add" action="{{ route('savesessie') }}" method="POST" enctype="multipart/form-data">
+<form style="margin-top:50px" class="manage-form-add" action="{{ route('updatesessie') }}" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
 
 <div class="angry-grid">
@@ -47,80 +47,101 @@
                 </select>
 
                  <h3>Titel</h3>
-                <input id='titlebox' type="textbox" name="titel" placeholder="titel"/>
+                <input id='titlebox' type="textbox" name="titel" placeholder="titel" value="{{ $data->Titel }}"/>
                 <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
 
                 <h3>Omschrijving</h3>
-            	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/></textarea>
+            	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/>{{ $data->Omschrijving }}</textarea>
                 <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
 
 
                 <h3>Naam spreker</h3>
-                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
+                <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam" value="{{ $data->Naam }}"/>
                  <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
 
                 <h3>Foto spreker</h3>
-                <input type="file" accept="image/*" onchange="loadFile(event)">
+                <img class="avatar" src="{{ '../../.' .  $data->Foto_Spreker }}" style="position:relative;width:153.25px;height:195px!important">
+                <label>Huidige foto: {{ explode('/',$data-> Foto_Spreker)[2] }}</label>
+                <input type="file" accept="image/*" onchange="loadFile(event)" >
+                    </div>
+            
 
-  </div>
   <div id="item-1">
 
                  <h3>Locatie en/of ruimte</h3>
-                <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie"/>
+                <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie" value="{{ $data->Locatie }}"/>
                 <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
 
 
                 <h3>Datum</h3>
-				<input type="date" name="datum" placeholder="datum" value="<?php echo date('Y-m-d'); ?>"/>
+				<input type="date" name="datum" placeholder="datum" value="{{ $data->Datum }}"/>
 
                 <h3>Starttijd</h3>
-                <input type="time" name="starttijd" placeholder="starttijd"/>
+                <input type="time" name="starttijd" placeholder="starttijd" value="{{ $data->Start_tijd }}"/>
 
                 <h3>Tijdsduur (min.)</h3>
-                <input type="number" max="1200" name="duur" placeholder="duur"/>
+                <input type="number" max="1200" name="duur" placeholder="duur" value="{{ $data->Duur }}"/>
 
                 <h3>Bedrijfslogo</h3>
+                 <img class="avatar" src="{{ '../../.' .  $data->Logo_bedrijf }}" style="position:relative;width:177.828px;height:100px!important">
+                  <label>Huidige foto: {{ explode('/',$data-> Logo_bedrijf)[2] }}</label>
                 <input type="file" accept="image/*" onchange="loadFile(event)">
-
+                <br><br><br><br><br>
                 <h3>Bedrijfsnaam</h3>
-                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaamnaam" placeholder="bedrijfsnaam"/>
+                <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam" value="{{ $data->Bedrijfsnaam }}"/>
                  <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
 
+                 
+
+
+                 </div>
 
   </div>
-
-</div>
-
-<center>
+  <center>
   <button id="btnSave" style="max-width:400px; margin-top: 50px;">opslaan</button>
 </center>
 
+</div>
+
+
   </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		</div>
 
 	</div>
 
+    <script>
+     $('#cars').empty();
 
+     function addOption(name) {
+        optText = name;
+        optValue = name;
+       // $opt.prop("selected","selected");
+       if(optText == "{{ $data->Colloquium}}")
+       {
+            $('#cars').append("<option value=" + optText + " selected>" + optValue + "</option>"); 
+       }
+       else
+       {
+            $('#cars').append("<option value=" + optText + ">" + optValue + "</option>"); 
+       }
+      }
+
+  $.get("http://localhost:8000/type", function(data, status){
+      //console.log(data);
+       for(var i =0;i < data.length;i++)
+{       
+  var item = data[i];
+  addOption(item.type);
+}
+  }
+
+  );
+
+   $('select option[value="{{ $data->Colloquium }}"]').attr("selected","selected");
+
+      
+      </script>
 
 
 

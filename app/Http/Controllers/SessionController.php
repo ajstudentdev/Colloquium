@@ -64,16 +64,18 @@ class SessionController extends BaseController
     {
         $id = $request->id;
 
-        if($id != "")
-        {
+       if($id != "")
+       {
             //edit!
-            $affected = DB::table('lezing')
-              ->where('Lezing_ID', $id)->get();
-              //->update(['Is_Gearchiveerd' => 0]);
-              //dd($affected);
-            //return redirect()->to('/view');
-            return view('edit');
-        }
+            
+            $data = DB::table('spreker')
+            ->join('lezing','spreker.Spreker_ID','=','lezing.Spreker_ID')
+            ->where(['Lezing_ID' => $id])
+            ->first();
+
+            //Return the view
+            return view('edit',compact('data'));
+      }
     }
 
     public function save(Request $request)
@@ -118,7 +120,7 @@ class SessionController extends BaseController
         ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam, 'Foto_Spreker' => $teaser_image1,  'Logo_Bedrijf' =>  $teaser_image2]);
 
         //Get Spreker_ID
-        $id = DB::table('spreker')->where(['Naam' => $sprekernaam])->get()->value('Spreker_ID');
+        $id = DB::table('spreker')->where(['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam])->get()->value('Spreker_ID');
 
         //Sla de lezing op
         DB::table('lezing')->insert(
@@ -129,6 +131,89 @@ class SessionController extends BaseController
 
         return redirect('/manage');
     }
+
+     public function update(Request $request)
+    {
+        $prepath = "./content/";
+
+        dd($request);
+        //Controleren of alle velden aanwezig zijn
+        /*
+        $type = strval($request->get('type'));
+        $titel = strval($request->get('titel'));
+        $omschrijving = strval($request->get('omschrijving'));
+        $sprekernaam = strval($request->get('sprekernaam'));
+        $locatie = strval($request->get('locatie'));
+        $datum = $request->get('datum');
+        $starttijd = $request->get('starttijd');
+        $duur = intval($request->get('duur'));
+        $bedrijfsnaam = strval($request->get('bedrijfsnaam'));
+
+        //Controle fotospreker
+         $teaser_image1 = "";
+         if ($request->hasFile('fotospreker')) {
+        $image = $request->file('fotospreker');
+        $teaser_image1 = time().'-'.$image->getClientOriginalName();
+        $destinationPath = public_path('/content');
+        $image->move($destinationPath, $teaser_image1);
+
+        $teaser_image1 = $prepath . $teaser_image1;
+        } 
+
+        $teaser_image2 = "";
+        //Controle bedrijfslogo
+        if ($request->hasFile('bedrijfslogo')) {
+        $image = $request->file('bedrijfslogo');
+        $teaser_image2 = time().'-'.$image->getClientOriginalName();
+        $destinationPath = public_path('/content');
+        $image->move($destinationPath, $teaser_image2);
+
+        $teaser_image2 = $prepath . $teaser_image2;
+        } */
+
+        //Als de sprekernaam bestaat dan niet opslaan!! bestaande gebruiken
+
+        //Sla sprekernaam op
+
+         //Get Spreker_ID
+       // $id = DB::table('spreker')->where(['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam])->get()->value('Spreker_ID');
+
+        //print($id);
+
+        /*
+        if($teaser_image1 == "" && $teaser_image2 == "") //beide leeg
+        {
+            DB::table('spreker')->where('Spreker_ID', intval($id))->update(
+        ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam]);
+        }
+        else if($teaser_image1 != "" && $teaser_image2 == "") //foto spreker gevuld
+        {
+             DB::table('spreker')->where('Spreker_ID', intval($id))->update(
+        ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam, 'Foto_Spreker' => $teaser_image1]);
+        }
+        else if($teaser_image1 == "" && $teaser_image2 != "") //bedrijfsfoto gevuld
+        {
+             DB::table('spreker')->where('Spreker_ID', intval($id))->update(
+        ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam, 'Logo_Bedrijf' =>  $teaser_image2]);
+        }
+        else //anders
+        {
+             DB::table('spreker')->where('Spreker_ID', intval($id))->update(
+        ['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam, 'Foto_Spreker' => $teaser_image1,  'Logo_Bedrijf' =>  $teaser_image2]);
+        }
+        
+       
+
+        //update de lezing 
+        DB::table('lezing')->where('Spreker_ID', intval($id))->update(
+        ['Datum' => $datum, 'Duur' => $duur, 'Locatie' => $locatie,
+        'Omschrijving' => $omschrijving, 'Start_tijd' => $starttijd, 'Titel' => $titel,
+        'Colloquium' => $type]);
+        
+        return redirect('/manage');
+        */
+    }
+
 
     public function read($lezingid)
     {

@@ -24,7 +24,6 @@ class TypeController extends BaseController
         ->select('type')
         ->get();
 
-
         return $data;
     }
 }

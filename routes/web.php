@@ -42,6 +42,9 @@ Route::get('/type', [TypeController::class, 'index']);
 //Route for the save sessie
 Route::post('/save', [SessionController::class, 'save'])->name('savesessie');
 
+//Route for the update sessie
+Route::post('/update/{id}', [SessionController::class, 'update'])->name('updatesessie');
+
 //Route for the read sessie
 Route::get('/session/read/{lezingid}', [SessionController::class, 'read'])->name('readsessie');
 

@@ -17,7 +17,7 @@
 				<a href="{{ url('') }}">HOME</a>
 			</li>
 			<li class="navbar--item">
-				<a href="{{ url('login') }}">INLOGGEN</a>
+				<!--<a href="{{ url('login') }}">INLOGGEN</a>-->
 			</li>
             <li class="navbar--item">
 				<a href="{{ url('manage') }}">MIJN LEZINGEN</a>
