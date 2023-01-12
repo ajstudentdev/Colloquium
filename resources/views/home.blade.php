@@ -56,7 +56,7 @@
             <table class="metadata-table">
             <thead>
               <tr>
-                <td class="column-name">TYPE</td>
+                <td class="column-name">TYPEMACHINE</td>
                 <td rowspan="2">
                     <svg width="30px" height="30px" viewBox="0 0 10 10">
                         <line class="point" x1="0" x2="10" y1="5" y2="5" />
