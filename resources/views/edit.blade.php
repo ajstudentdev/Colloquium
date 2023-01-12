@@ -126,7 +126,7 @@
        }
       }
 
-  $.get("http://localhost:8000/type", function(data, status){
+  $.get("https://colloquium.opendidact.nl/type", function(data, status){
       //console.log(data);
        for(var i =0;i < data.length;i++)
 {       
