@@ -163,7 +163,7 @@
 
                           @foreach($data as $item)
                            @if(!$item->Is_Gearchiveerd)
-                           <tr class="clickable-row basic1" id="row{{++$rownumber}}"  data-href="{{ route('readsessie', $item->Lezing_ID) }}">
+                           <tr class="clickable-row basic1" id="row{{++$rownumber}}" data-href="#">
 								<td class="hidemobile">{{ $item->Colloquium }}</td>
 								<td>{{ $item->Naam }}</td>
 								<td>{{ $item->Titel }}</td>
@@ -181,7 +181,7 @@
 					</table>
 				</div>
 				<div class="upcoming-container-right">
-                            <img style = "box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);" src="./content/qrcode_example.gif">
+                            <img style = "box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);" src="./content/QR_Home.png">
 					</div>
 				</div>
 			</div>

@@ -93,6 +93,8 @@ class SessionController extends BaseController
         $duur = intval($request->get('duur'));
         $bedrijfsnaam = strval($request->get('bedrijfsnaam'));
 
+        $teaser_image1 = "";
+
         //Controle fotospreker
          if ($request->hasFile('fotospreker')) {
         $image = $request->file('fotospreker');
@@ -101,6 +103,7 @@ class SessionController extends BaseController
         $image->move($destinationPath, $teaser_image1);
         } 
 
+        $teaser_image2 = "";
         //Controle bedrijfslogo
         if ($request->hasFile('bedrijfslogo')) {
         $image = $request->file('bedrijfslogo');
@@ -109,8 +112,24 @@ class SessionController extends BaseController
         $image->move($destinationPath, $teaser_image2);
         } 
 
-        $teaser_image1 = $prepath . $teaser_image1;
-        $teaser_image2 = $prepath . $teaser_image2;
+        if($teaser_image1 != "./content/")
+        {
+            $teaser_image1 = $prepath . $teaser_image1;
+        }
+        else
+        {
+            $teaser_image1 = "./content/profile.jpg";
+        }
+
+        if($teaser_image2 != "./content/")
+        {
+            $teaser_image2 = $prepath . $teaser_image2;
+        }
+        else
+        {
+            $teaser_image2 = "./content/profile.jpg";
+        }
+        
 
         //Als de sprekernaam bestaat dan niet opslaan!! bestaande gebruiken
 
@@ -134,11 +153,11 @@ class SessionController extends BaseController
 
      public function update(Request $request)
     {
+        $id = $request->id;
         $prepath = "./content/";
 
-        dd($request);
         //Controleren of alle velden aanwezig zijn
-        /*
+        
         $type = strval($request->get('type'));
         $titel = strval($request->get('titel'));
         $omschrijving = strval($request->get('omschrijving'));
@@ -150,6 +169,7 @@ class SessionController extends BaseController
         $bedrijfsnaam = strval($request->get('bedrijfsnaam'));
 
         //Controle fotospreker
+
          $teaser_image1 = "";
          if ($request->hasFile('fotospreker')) {
         $image = $request->file('fotospreker');
@@ -169,18 +189,16 @@ class SessionController extends BaseController
         $image->move($destinationPath, $teaser_image2);
 
         $teaser_image2 = $prepath . $teaser_image2;
-        } */
+        } 
 
         //Als de sprekernaam bestaat dan niet opslaan!! bestaande gebruiken
 
         //Sla sprekernaam op
 
          //Get Spreker_ID
-       // $id = DB::table('spreker')->where(['Naam' => $sprekernaam, 'Bedrijfsnaam' => $bedrijfsnaam])->get()->value('Spreker_ID');
+        $id = DB::table('lezing')->where(['Lezing_ID' => $id])->get()->value('Spreker_ID');
 
-        //print($id);
-
-        /*
+        
         if($teaser_image1 == "" && $teaser_image2 == "") //beide leeg
         {
             DB::table('spreker')->where('Spreker_ID', intval($id))->update(
@@ -211,15 +229,17 @@ class SessionController extends BaseController
         'Colloquium' => $type]);
         
         return redirect('/manage');
-        */
+        
     }
 
 
-    public function read($lezingid)
-    {
-        $lezing = DB::table('lezing')
-              ->where('Lezing_ID', $lezingid)->get();
+    //public function read($lezingid)
+    //{
+        //$lezing = DB::table('lezing')
+         //     ->where('Lezing_ID', $lezingid)->get();
 
-        return view('read', compact('lezing'));
-    }
+       // return view('read', compact('lezing'));
+       //hehe gotcha
+      // return view ('/');
+   // }
 }

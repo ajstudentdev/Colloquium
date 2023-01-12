@@ -111,7 +111,7 @@
 								<td class="hidemobile">{{ $item->Duur }}</td>
 								<td>{{ $item->Locatie }}</td>
                                 <td>
-                                     <a href="{{ route('wijzigsessie', $item->Spreker_ID) }}"><button class="button edit" title="Bewerken/Bekijken"></button></a>
+                                     <a href="{{ route('wijzigsessie', $item->Lezing_ID) }}"><button class="button edit" title="Bewerken/Bekijken"></button></a>
       <!--                                <a href="{{ route('bekijksessie', $item->Lezing_ID) }}"><button class="button publiceer" title="Publiceren"></button></a> -->
                                     <a href="{{ route('archiveersessie', $item->Lezing_ID) }}"><button class="button archive" title="Archiveren"></button></a>
                                 </td>

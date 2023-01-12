@@ -46,7 +46,7 @@ Route::post('/save', [SessionController::class, 'save'])->name('savesessie');
 Route::post('/update/{id}', [SessionController::class, 'update'])->name('updatesessie');
 
 //Route for the read sessie
-Route::get('/session/read/{lezingid}', [SessionController::class, 'read'])->name('readsessie');
+//Route::get('/session/read/{lezingid}', [SessionController::class, 'read'])->name('readsessie');
 
 //Route for the login
 Route::post('/loginapp', [LoginController::class, 'login'])->name('loginapp');

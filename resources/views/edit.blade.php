@@ -32,9 +32,8 @@
         <center>
         <a href="/manage"><button class="open-overview-screen" style="max-width:400px;">< Terug naar overzicht</button></a>
         </center>
-
-
-<form style="margin-top:50px" class="manage-form-add" action="{{ route('updatesessie') }}" method="POST" enctype="multipart/form-data">
+       
+<form style="margin-top:50px" class="manage-form-add" action="{{ route('updatesessie', ['id' => $data->Lezing_ID]) }}" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
 
 <div class="angry-grid">
@@ -62,7 +61,7 @@
                 <h3>Foto spreker</h3>
                 <img class="avatar" src="{{ '../../.' .  $data->Foto_Spreker }}" style="position:relative;width:153.25px;height:195px!important">
                 <label>Huidige foto: {{ explode('/',$data-> Foto_Spreker)[2] }}</label>
-                <input type="file" accept="image/*" onchange="loadFile(event)" >
+                <input type="file" accept="image/*" onchange="loadFile(event)" name="fotospreker">
                     </div>
             
 
@@ -85,7 +84,7 @@
                 <h3>Bedrijfslogo</h3>
                  <img class="avatar" src="{{ '../../.' .  $data->Logo_bedrijf }}" style="position:relative;width:177.828px;height:100px!important">
                   <label>Huidige foto: {{ explode('/',$data-> Logo_bedrijf)[2] }}</label>
-                <input type="file" accept="image/*" onchange="loadFile(event)">
+                <input type="file" accept="image/*" onchange="loadFile(event)" name="bedrijfslogo">
                 <br><br><br><br><br>
                 <h3>Bedrijfsnaam</h3>
                 <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam" value="{{ $data->Bedrijfsnaam }}"/>

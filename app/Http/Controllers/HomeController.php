@@ -57,7 +57,7 @@ class HomeController extends BaseController
         ->join('lezing','spreker.Spreker_ID','=','lezing.Spreker_ID')
         //->where(['Is_Gearchiveerd' => '1'])
         ->get();
-            //Return the view
+            //Return the view 
         return view('manage',compact('data'));
     }
 }
