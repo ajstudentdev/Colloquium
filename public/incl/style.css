@@ -26,27 +26,31 @@ body {
 	color: #FFF;
 	text-shadow: 2px 2px 8px #000;
 	background-color: #000;
-    background: url(../img/mountain.jpg); 
-    background-attachment:fixed;
-    overflow-x:hidden;
-    background-size:cover;
+	background: url(../img/mountain.jpg);
+	background-attachment: fixed;
+	overflow-x: hidden;
+	background-size: cover;
 }
 
 body::after {
-    content: "";
-    background-image: linear-gradient(#000000bf, #ffffff00);
-    opacity: 0.7;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height:100%;
-    position: absolute;
-    z-index: -1;
+	content: "";
+	background-image: linear-gradient(#000000bf, #ffffff00);
+	opacity: 0.7;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
 }
 
-#basic-modal-content1, #basic-modal-content2, #basic-modal-content3, #basic-modal-content4, #basic-modal-content5 {
-    display:none;
+#basic-modal-content1,
+#basic-modal-content2,
+#basic-modal-content3,
+#basic-modal-content4,
+#basic-modal-content5 {
+	display: none;
 }
 
 a {
@@ -59,9 +63,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1, .title {
+h1,
+.title {
 	font-size: 50px;
-    font-weight:bolder;
+	font-weight: bolder;
 }
 
 
@@ -72,114 +77,20 @@ h1, .title {
 	gap: 0px 0px;
 	width: 93vw;
 	grid-auto-flow: row;
+    min-width: 620px;
 }
 
 
-  .focused {
-    background-color:#FFF!important;
-    -webkit-box-shadow:0 0 20px #FFF; 
-    -moz-box-shadow: 0 0 20px #FFF; 
-    box-shadow:0 0 20px #FFF;
-    -webkit-transition:background 1s;
-    -moz-transition:background 1s;
-    -o-transition:background 1s;
-    transition:background 1s;
-    font-weight:bolder!important;
-  }
-
-@media screen and (min-width : 1051px) {
-	.container {
-		max-height: 90vh;
-        min-height:800px;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
-		grid-template-areas: "Title Title Title"
-        "Description Description Avatar"
-        "Metadata Metadata Logo-company"
-        "Upcoming Upcoming Upcoming";
-	}
-
-	.qrcode, .upcoming-container-right {
-		display: block;
-	}
-
-	.upcoming-container-left {
-		width: 85%;
-	}
-}
-
-@media screen and (max-width : 1050px) {
-	.container {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 0.5fr 1fr 0.8fr 0.5fr 1fr;
-		grid-template-areas: "Title Title"
-        "Description Description"
-        "Logo-company Avatar"
-        "Metadata Metadata"
-        "Upcoming Upcoming";
-	}
-
-	.qrcode, .upcoming-container-right {
-		display: none;
-	}
-
-	.upcoming-container-left {
-		width: 100%;
-	}
-
-
-    .logo-company-container {
-       margin-top: 14%;
-    }
-
-    .hidemobile {
-        display:none!important;
-    }
-
-
-    .metadata-table, .omschrijving-lezing {
-        width: 98%!important;
-    }
-
-    .avatar-img {
-        margin-top: 10%!important;
-    }
-
-    .spreker-naam {
-        margin-top: -13%!important;
-        font-size:25px!important;
-    }
-
-    .Metadata {
-    margin-top: 17%;
-    margin-bottom: 12%;
-}
-
-.naam-company {
-    margin-top: 5%;
-}
-
-}
-
-
-@media screen and (max-width : 600px) {
-
-    svg {
-        display:none!important;
-    }
-
-    .avatar-img {
-        margin-top: 15%!important;
-    }
-
-    .spreker-naam {
-        margin-top: -19%!important;
-        font-size:20px!important;
-    }
-
-
-
-
+.focused {
+	background-color: #FFF !important;
+	-webkit-box-shadow: 0 0 20px #FFF;
+	-moz-box-shadow: 0 0 20px #FFF;
+	box-shadow: 0 0 20px #FFF;
+	-webkit-transition: background 1s;
+	-moz-transition: background 1s;
+	-o-transition: background 1s;
+	transition: background 1s;
+	font-weight: bolder !important;
 }
 
 .Title {
@@ -206,9 +117,11 @@ h1, .title {
 	grid-area: Upcoming;
 }
 
-html, body, {
-	height: 100%;
-	margin: 0;
+html,
+body,
+{
+height: 100%;
+margin: 0;
 }
 
 /* For presentation only, no need to copy the code below */
@@ -218,7 +131,7 @@ html, body, {
 }
 
 .container *:after {
-    /* content:attr(class); */
+	/* content:attr(class); */
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -227,32 +140,28 @@ html, body, {
 	justify-content: center;
 }
 
-/*
-.logo-bedrijf {
-    width:100px;
-    margin:auto;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter:         drop-shadow(5px 5px 5px #222); 
-}
-*/
+.logo-bedrijf-img
 
-
-.logo-bedrijf-img /* parent */ {
-    text-align: center;
-    position:relative;
+/* parent */
+	{
+	text-align: center;
+	position: relative;
 }
 
-.logo-bedrijf /* child */ {
-    margin: 0 auto;
-    max-height:100px;
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter:         drop-shadow(5px 5px 5px #222);
-    display:block;
-    position:absolute;
-      left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto;
+.logo-bedrijf
+
+/* child */
+	{
+	margin: 0 auto;
+	max-height: 80px;
+	-webkit-filter: drop-shadow(5px 5px 5px #222);
+	filter: drop-shadow(5px 5px 5px #222);
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .metadata-table {
@@ -311,12 +220,12 @@ html, body, {
 
 
 .avatar {
-    object-fit: cover!important;
-    max-width: 100%!important;
-    height: 100%!important;
-    border-radius:20px;
-    width: 90%;
-   	border: 10px solid #ee7b00;
+	object-fit: cover !important;
+	max-width: 100% !important;
+	height: 100% !important;
+	border-radius: 20px;
+	width: 90%;
+	border: 10px solid #ee7b00;
 	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
 }
 
@@ -333,7 +242,7 @@ html, body, {
 }
 
 .container {
-    padding:2%;
+	padding: 2%;
 	margin-top: -10px;
 }
 
@@ -361,14 +270,14 @@ html, body, {
 }
 
 .upcoming-container-right {
-	width: 14%;logo-company-container
-	height: 100%;
+	width: 14%;
+	logo-company-container height: 100%;
 	clear: none;
 	float: right;
 }
 
 .home tr.clickable-row:hover {
-	background-color: lightyellow!important;
+	background-color: lightyellow !important;
 	font-weight: bolder;
 	cursor: pointer;
 }
@@ -385,11 +294,11 @@ html, body, {
 	background: rgba(0, 0, 0, 0.4);
 	box-shadow: 0 0 20px 0px rgb(0 0 0 / 50%);
 	padding: 20px;
-    padding-bottom:40px;
+	padding-bottom: 40px;
 	font-size: 20px;
 	width: 100%;
 	height: 20%;
-    text-align:center;
+	text-align: center;
 }
 
 .divide {
@@ -399,10 +308,9 @@ html, body, {
 .metadata-table .column-name {
 	font-weight: bolder;
 	text-transform: uppercase;
-    text-decoration: underline;
-    width:24%;
+	text-decoration: underline;
+	width: 24%;
 }
-
 
 
 /* --------------- menu --------------- */
@@ -531,13 +439,16 @@ html, body, {
 	margin: auto;
 }
 
-.manage-page-add-container, .manage-page-overview-container {
+.manage-page-add-container,
+.manage-page-overview-container {
 	width: 100%;
 	padding: 8% 0 0;
 	margin: auto;
 }
 
-.loginform, .manageform-add, .manage-page-overview {
+.loginform,
+.manageform-add,
+.manage-page-overview {
 	position: relative;
 	z-index: 1;
 	margin: 0 auto 100px;
@@ -546,56 +457,57 @@ html, body, {
 }
 
 .loginform button {
-    margin-top:30px;
-    margin-bottom:30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .point {
-  stroke: white;
-  stroke-width: 0.5;
+	stroke: white;
+	stroke-width: 0.5;
 }
 
 
 .omschrijvingcontainer {
-    text-align: center;
+	text-align: center;
 }
 
-.omschrijving, .locatie, .tijd, .datum, .type, .bedrijf, .avatar, .title {
-    height: 0;
-    margin: auto;
-    text-align: center;
-     
+.omschrijving,
+.locatie,
+.tijd,
+.datum,
+.type,
+.bedrijf,
+.avatar,
+.title {
+	height: 0;
+	margin: auto;
+	text-align: center;
+
 }
 
 .title {
-    text-align:left;
+	text-align: left;
 }
 
 .avatar {
-    position:absolute; 
+	position: absolute;
 }
-
-/*
-.logo-bedrijf-img {
-    width:40%;
-    margin:auto;
-    text-align:center;
-}
-*/
-
 
 .bedrijf {
-    font-weight:bolder;
+	font-weight: bolder;
 }
 
 
 p.omschrijving {
-    text-align:left!important;
-    margin:1%;
-    position:absolute;
+	text-align: left !important;
+	margin: 1%;
+	position: absolute;
 }
 
-.loginform input, .manageform-add input, .manageform-add textarea, .manageform-add select {
+.loginform input,
+.manageform-add input,
+.manageform-add textarea,
+.manageform-add select {
 	font-family: "Roboto", sans-serif;
 	outline: 0;
 	background: #f2f2f2;
@@ -608,67 +520,51 @@ p.omschrijving {
 }
 
 .manageform-add textarea {
-    height:150px;
-    resize: none; 
+	height: 150px;
+	resize: none;
 }
 
-
-/*
 button {
-	font-family: "Roboto", sans-serif;
-	text-transform: uppercase;
 	outline: 0;
-	background: #00c12a;
-	width: 100%;
-	border: 0;
-	padding: 15px;
-	color: #FFFFFF;
-	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
+	position: relative;
+	display: inline-block;
+	padding: 10px 40px;
+	font-size: 16px;
+	overflow: hidden;
 	cursor: pointer;
+	border: 2px solid #EE7B00;
+	background: #FFF;
+	color: #000;
+	font-weight: 600;
+	transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+	border-radius: 20px;
 }
 
-*/
-
-button {
-    outline: 0;
-    position: relative;
-    display: inline-block;
-    padding: 10px 40px;
-    font-size: 16px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid #EE7B00;
-    background: #FFF;
-    color: #000;
-    font-weight: 600;
-    transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
-    border-radius:20px;
-}
 button:hover {
-    color: #000;
-    box-shadow: 0 0 5px #ffffff, 0 0 20px rgb(255 255 255 / 80%), 0 0 35px rgb(255 255 255 / 70%), 0 0 50px rgb(255 255 255 / 60%);
-    border-color: #fff;
+	color: #000;
+	box-shadow: 0 0 5px #ffffff, 0 0 20px rgb(255 255 255 / 80%), 0 0 35px rgb(255 255 255 / 70%), 0 0 50px rgb(255 255 255 / 60%);
+	border-color: #fff;
 }
 
 
-.loginform .message a, .manageform-add .message a {
+.loginform .message a,
+.manageform-add .message a {
 	color: #EE7B00;
 	text-decoration: none;
 }
 
-.loginform .register-form, .manageform-add .register-form, .forgotpass-form {
+.loginform .register-form,
+.manageform-add .register-form,
+.forgotpass-form {
 	display: none;
 }
 
 .manageform-add .aantal {
-    margin-top:-10px;
-    font-size:13px;
+	margin-top: -10px;
+	font-size: 13px;
 }
 
 # -------- modal --------#
-
 
 #simplemodal-container {
 	-webkit-animation-name: fadeIn;
@@ -678,24 +574,48 @@ button:hover {
 }
 
 @-webkit-keyframes slideIn {
-	  from {bottom: -300px; opacity: 0}
-	  to {bottom: 0; opacity: 1}
+	from {
+		bottom: -300px;
+		opacity: 0
 	}
 
-	@keyframes slideIn {
-	  from {bottom: -300px; opacity: 0}
-	  to {bottom: 0; opacity: 1}
+	to {
+		bottom: 0;
+		opacity: 1
+	}
+}
+
+@keyframes slideIn {
+	from {
+		bottom: -300px;
+		opacity: 0
 	}
 
-	@-webkit-keyframes fadeIn {
-	  from {opacity: 0}
-	  to {opacity: 1}
+	to {
+		bottom: 0;
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0
 	}
 
-	@keyframes fadeIn {
-	  from {opacity: 0}
-	  to {opacity: 1}
+	to {
+		opacity: 1
 	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
 
 
 #simplemodal-container {
@@ -703,11 +623,11 @@ button:hover {
 	-webkit-animation-duration: 0.4s;
 	animation-name: slideIn;
 	animation-duration: 0.4s
-	}
+}
 
 .simplemodal-container {
 	position: fixed;
-	    bottom: 0;
+	bottom: 0;
 
 }
 
@@ -767,111 +687,229 @@ button:hover {
 /* -------- MANAGE FORM --------- */
 
 
-div.manage-page-add-container > div > form > textarea {
-    height:150px!important;
+div.manage-page-add-container>div>form>textarea {
+	height: 150px !important;
 }
 
-div.manage-page-add-container > div {
-    background: rgba(0, 0, 0, 0.4);
+div.manage-page-add-container>div {
+	background: rgba(0, 0, 0, 0.4);
 }
 
-div.manage-page-add-container > h2 {
-    text-align:center;
-    font-size:30px;
+div.manage-page-add-container>h2 {
+	text-align: center;
+	font-size: 30px;
 }
 
 div.manage-page-add-container button {
-    margin-top:40px;
+	margin-top: 40px;
 }
 
 .manageform-add {
-    max-width:1440px!important;
+	max-width: 1440px !important;
 }
 
 
 .manage-page-overview-container .upcoming-table {
-    width:100%!important;
-    margin-top:50px;
+	width: 100% !important;
+	margin-top: 50px;
 }
 
-.manage-page-overview, .loginform {
-    background:rgba(0, 0, 0, 0.4);
+.manage-page-overview,
+.loginform {
+	background: rgba(0, 0, 0, 0.4);
 }
 
 .aantal {
-    text-align:center;
+	text-align: center;
 }
 
 
-input[type=file]
-{ background:none!important;
-    border: 1px solid #fff;}
+input[type=file] {
+	background: none !important;
+	border: 1px solid #fff;
+}
 
 
 .angry-grid {
-   display: grid; 
+	display: grid;
 
-   grid-template-rows: 1fr;
-   grid-template-columns: 1fr 1fr;
-   
-   gap: 0px;
-   height: 100%;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr;
+
+	gap: 0px;
+	height: 100%;
 
 
-   
 }
 
 #item-0 {
 
-   grid-row-start: 1;
-   grid-column-start: 1;
+	grid-row-start: 1;
+	grid-column-start: 1;
 
-   grid-row-end: 2;
-   grid-column-end: 2;
+	grid-row-end: 2;
+	grid-column-end: 2;
 
-   padding-right:70px;
-   
+	padding-right: 70px;
+
 }
+
 #item-1 {
 
-   grid-row-start: 1;
-   grid-column-start: 2;
+	grid-row-start: 1;
+	grid-column-start: 2;
 
-   grid-row-end: 2;
-   grid-column-end: 3;
+	grid-row-end: 2;
+	grid-column-end: 3;
 
-   padding-left:70px;
+	padding-left: 70px;
 
-   border-left: 1px solid #ee7b00;
-   
+	border-left: 1px solid #ee7b00;
+
 }
 
 
 .button {
-  border: none;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width:30px;
-  height:30px;
-  background-position:center;
-  background-size:20px 20px;
-  background-repeat: no-repeat;
-  box-shadow:0 0 5px 0px rgb(0 0 0 / 50%);
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	background-position: center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	box-shadow: 0 0 5px 0px rgb(0 0 0 / 50%);
 }
-.edit, edit:hover{
-    background-color: #6a6dcd;
-    background-image: url(../img/edit.png);
-} 
+
+.edit,
+edit:hover {
+	background-color: #6a6dcd;
+	background-image: url(../img/edit.png);
+}
+
 .publiceer {
-    background-color: #4CAF50;
-    background-image: url(../img/up-arrow.png);
-} 
+	background-color: #4CAF50;
+	background-image: url(../img/up-arrow.png);
+}
+
 .archive {
-    background-color: #f43636;
-    background-image: url(../img/down-arrow.png);
+	background-color: #f43636;
+	background-image: url(../img/down-arrow.png);
+}
+
+
+
+@media screen and (min-width : 1051px) {
+	.container {
+		max-height: 90vh;
+		min-height: 800px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 0.5fr 1.5fr 1fr 1fr;
+		grid-template-areas: "Title Title Title"
+			"Description Description Avatar"
+			"Metadata Metadata Logo-company"
+			"Upcoming Upcoming Upcoming";
+	}
+
+	.qrcode,
+	.upcoming-container-right {
+		display: block;
+	}
+
+	.upcoming-container-left {
+		width: 85%;
+	}
+}
+
+@media screen and (max-width : 1050px) {
+	.container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 0.5fr 1fr 0.8fr 0.5fr 1fr;
+		grid-template-areas: "Title Title"
+			"Description Description"
+			"Logo-company Avatar"
+			"Metadata Metadata"
+			"Upcoming Upcoming";
+	}
+
+	.qrcode,
+	.upcoming-container-right {
+		display: none;
+	}
+
+	.upcoming-container-left {
+		width: 100%;
+	}
+
+
+	.logo-company-container {
+		margin-top: 14%;
+	}
+
+	.hidemobile {
+		display: none !important;
+	}
+
+
+	.metadata-table,
+	.omschrijving-lezing {
+		width: 98% !important;
+	}
+
+	.avatar-img {
+		margin-top: 10% !important;
+	}
+
+	.spreker-naam {
+		margin-top: -13% !important;
+		font-size: 25px !important;
+	}
+
+	.Metadata {
+		margin-top: 17%;
+		margin-bottom: 12%;
+	}
+
+	.naam-company {
+		margin-top: 5%;
+	}
+
+    .Title {
+        margin-top:50px;
+    }
+
+}
+
+
+@media screen and (max-width : 600px) {
+
+	svg {
+		display: none !important;
+	}
+
+	.avatar-img {
+		margin-top: 15% !important;
+	}
+
+	.spreker-naam {
+		margin-top: -19% !important;
+		font-size: 20px !important;
+	}
+
+    body{
+       min-width:620px;        /* Suppose you want minimum width of 1000px */
+       width: auto !important;  /* Firefox will set width as auto */
+       width:620px;            /* As IE6 ignores !important it will set width as 1000px; */
+    }
+
+    .logo-bedrijf {
+        max-width:300px!important;
+    }
+
+}
