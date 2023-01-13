@@ -346,6 +346,7 @@ margin: 0;
 	opacity: 0.8;
 	display: none;
 	z-index: 999;
+    min-width: 660px;
 }
 
 .brand {
@@ -910,6 +911,10 @@ edit:hover {
 
     .logo-bedrijf {
         max-width:300px!important;
+    }
+
+    .hamburger-menu {
+        display:none; /* tijdelijk verbergen op mobiele website totdat login enz werkt! */
     }
 
 }
