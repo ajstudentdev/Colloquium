@@ -60,13 +60,6 @@
 
 </script>
 
-<style>
-.aantal {
-    display:none;
-}
-</style>
-
-
 <div class="manage-page-overview-container">
 
     <h1 style="text-align:center;">Lezingen beheren</h1>
