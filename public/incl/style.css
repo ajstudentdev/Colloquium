@@ -805,7 +805,7 @@ edit:hover {
 
 
 
-@media screen and (min-width : 1051px) {
+@media screen and (min-width : 1201px) {
 	.container {
 		max-height: 90vh;
 		min-height: 800px;
@@ -827,10 +827,10 @@ edit:hover {
 	}
 }
 
-@media screen and (max-width : 1050px) {
+@media screen and (max-width : 1200px) {
 	.container {
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 0.5fr 1fr 0.8fr 0.5fr 1fr;
+		grid-template-rows: 0.3fr 1fr 0.3fr 0.3fr 1fr;
 		grid-template-areas: "Title Title"
 			"Description Description"
 			"Logo-company Avatar"
@@ -887,7 +887,7 @@ edit:hover {
 }
 
 
-@media screen and (max-width : 600px) {
+@media screen and (max-width : 800px) {
 
 	svg {
 		display: none !important;
