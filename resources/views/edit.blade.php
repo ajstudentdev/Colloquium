@@ -47,16 +47,16 @@
 
                  <h3>Titel</h3>
                 <input id='titlebox' type="textbox" name="titel" placeholder="titel" value="{{ $data->Titel }}"/>
-                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
+                <p class="aantal aantal-title">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
 
                 <h3>Omschrijving</h3>
             	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/>{{ $data->Omschrijving }}</textarea>
-                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
+                <p class="aantal aantal-description">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
 
 
                 <h3>Naam spreker</h3>
                 <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam" value="{{ $data->Naam }}"/>
-                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
+                 <p class="aantal aantal-spreker">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
 
                 <h3>Foto spreker</h3>
                 <img class="avatar" src="{{ '../../.' .  $data->Foto_Spreker }}" style="position:relative;width:153.25px;height:195px!important">
@@ -69,7 +69,7 @@
 
                  <h3>Locatie en/of ruimte</h3>
                 <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie" value="{{ $data->Locatie }}"/>
-                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
+                <p class="aantal aantal-locatie">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
 
 
                 <h3>Datum</h3>
@@ -88,7 +88,7 @@
                 <br><br><br><br><br>
                 <h3>Bedrijfsnaam</h3>
                 <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam" value="{{ $data->Bedrijfsnaam }}"/>
-                 <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
+                 <p class="aantal aantal-bedrijfsnaam">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
 
                  
 
@@ -97,7 +97,7 @@
 
   </div>
   <center>
-  <button id="btnSave" style="max-width:400px; margin-top: 50px;">opslaan</button>
+  <button id="btnSave" style="max-width:400px; margin-top: 50px;">Opslaan</button>
 </center>
 
 </div>

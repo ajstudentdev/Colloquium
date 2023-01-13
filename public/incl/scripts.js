@@ -245,6 +245,8 @@ if (window.location.pathname == '/manage' || '/edit') {
 
    function updateCountdescriptionbox() {
       var cs = $(this).val().length;
+      $( ".aantal-description" ).show( "slow", function() {
+          });
       $('#characters-description').text(cs);
    }
 
@@ -275,6 +277,8 @@ if (window.location.pathname == '/manage' || '/edit') {
 
    function updateCounttitlebox() {
       var cs = $(this).val().length;
+      $( ".aantal-title" ).show( "slow", function() {
+          });
       $('#characters-title').text(cs);
    }
 
@@ -295,6 +299,8 @@ if (window.location.pathname == '/manage' || '/edit') {
 
    function updateCountsprekerbox() {
       var cs = $(this).val().length;
+      $( ".aantal-spreker" ).show( "slow", function() {
+          });
       $('#characters-spreker').text(cs);
    }
 
@@ -314,6 +320,8 @@ if (window.location.pathname == '/manage' || '/edit') {
 
    function updateCountlocatiebox() {
       var cs = $(this).val().length;
+        $( ".aantal-locatie" ).show( "slow", function() {
+          });
       $('#characters-locatie').text(cs);
    }
 
@@ -334,6 +342,8 @@ if (window.location.pathname == '/manage' || '/edit') {
 
    function updateCountbedrijfsnaambox() {
       var cs = $(this).val().length;
+        $( ".aantal-bedrijfsnaam" ).show( "slow", function() {
+          });
       $('#characters-bedrijfsnaam').text(cs);
    }
 

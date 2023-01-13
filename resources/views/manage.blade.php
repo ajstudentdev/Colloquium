@@ -60,6 +60,11 @@
 
 </script>
 
+<style>
+.aantal {
+    display:none;
+}
+</style>
 
 
 <div class="manage-page-overview-container">
@@ -232,16 +237,16 @@
 
                  <h3>Titel</h3>
                 <input id='titlebox' type="textbox" name="titel" placeholder="titel"/>
-                <p class="aantal">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
+                <p class="aantal aantal-title">Je hebt nu <span id="characters-title">0</span> karakters getypt (max 40)</p>
 
                 <h3>Omschrijving</h3>
             	<textarea id='descriptionbox' type="omschrijving" name="omschrijving" placeholder="omschrijving"/></textarea>
-                <p class="aantal">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
+                <p class="aantal aantal-description">Je hebt nu <span id="characters-description">0</span> karakters getypt (max 400)</p>
 
 
                 <h3>Naam spreker</h3>
                 <input id='sprekerbox' type="textbox" name="sprekernaam" placeholder="spreker naam"/>
-                 <p class="aantal">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
+                 <p class="aantal aantal-spreker">Je hebt nu <span id="characters-spreker">0</span> karakters getypt (max 40)</p>
 
                 <h3>Foto spreker</h3>
                 <input type="file" accept="image/*" onchange="loadFile(event)" name="fotospreker">
@@ -251,7 +256,7 @@
 
                  <h3>Locatie en/of ruimte</h3>
                 <input id='locatiebox' type="locatie" name="locatie" placeholder="locatie"/>
-                <p class="aantal">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
+                <p class="aantal aantal-locatie">Je hebt nu <span id="characters-locatie">0</span> karakters getypt (max 40)</p>
 
 
                 <h3>Datum</h3>
@@ -268,7 +273,7 @@
 
                 <h3>Bedrijfsnaam</h3>
                 <input id='bedrijfsnaambox' type="textbox" name="bedrijfsnaam" placeholder="bedrijfsnaam"/>
-                 <p class="aantal">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
+                 <p class="aantal aantal-bedrijfsnaam">Je hebt nu <span id="characters-bedrijfsnaam">0</span> karakters getypt (max 40)</p>
 
 
   </div>
@@ -276,7 +281,7 @@
 </div>
 
 <center>
-  <button id="btnSave" style="max-width:400px; margin-top: 50px;">opslaan</button>
+  <button id="btnSave" style="max-width:400px; margin-top: 50px;">Opslaan</button>
 </center>
 
   </form>
