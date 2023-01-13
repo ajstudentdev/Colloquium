@@ -903,12 +903,6 @@ edit:hover {
 		font-size: 20px !important;
 	}
 
-    body, body::after {
-       min-width:660px;        /* Suppose you want minimum width of 1000px */
-       width: auto !important;  /* Firefox will set width as auto */
-       width:620px;            /* As IE6 ignores !important it will set width as 1000px; */
-    }
-
     .logo-bedrijf {
         max-width:300px!important;
     }
