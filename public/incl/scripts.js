@@ -251,7 +251,7 @@ if (window.location.pathname == '/manage' || '/edit') {
    }
 
    /*limiteer invoer omschrijving */
-
+   if (window.location.pathname != '/'){
    let namedescriptionbox = document.getElementById('descriptionbox');
 
    namedescriptionbox.addEventListener('keyup', () => {
@@ -260,6 +260,7 @@ if (window.location.pathname == '/manage' || '/edit') {
       }
    })
 
+   
 
    /* weergeef aantal karakters textbox title */
    $('#titlebox').keyup(updateCounttitlebox);
@@ -274,6 +275,7 @@ if (window.location.pathname == '/manage' || '/edit') {
          nametitlebox.value = nametitlebox.value.slice(0, 39);
       }
    })
+   
 
    function updateCounttitlebox() {
       var cs = $(this).val().length;
@@ -339,7 +341,7 @@ if (window.location.pathname == '/manage' || '/edit') {
          namebedrijfsnaambox.value = namebedrijfsnaambox.value.slice(0, 39);
       }
    })
-
+   }
    function updateCountbedrijfsnaambox() {
       var cs = $(this).val().length;
         $( ".aantal-bedrijfsnaam" ).focus().show( "slow", function() {
